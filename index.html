@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aipri Lifesciences | Professional Surgical Sutures</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Others/style/styles.css">
+    <link rel="stylesheet" href="/Others/style/styles.css">
 </head>
 <body>
 
-    <!-- 1. HEADER & NAVIGATION -->
-    <header id="header">
+      <header id="header">
         <div class="container">
             <div class="nav-container">
                 <a href="#home" class="logo-container">
@@ -20,9 +19,58 @@
                     <ul>
                         <li><a href="#home"><span>Home</span></a></li>
                         <li><a href="#quality"><span>Quality</span></a></li>
-                        <li><a href="#products"><span>Products</span></a></li>
+                        <li class="dropdown">
+                            <a href="#products"><span>Products <i class="fas fa-chevron-down"></i></span></a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-container">
+                                    <div class="dropdown-section">
+                                        <h4>Human Sutures</h4>
+                                        <div class="dropdown-columns">
+                                            <div class="dropdown-column">
+                                                <h5>Absorbable Sutures</h5>
+                                                <ul>
+                                                    <li><a href="#products">Aicryl™</a></li>
+                                                    <li><a href="#products">MonoPril™</a></li>
+                                                    <li><a href="#products">Polyglactin</a></li>
+                                                    <li><a href="#products">Poliglecaprone</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-column">
+                                                <h5>Non-Absorbable Sutures</h5>
+                                                <ul>
+                                                    <li><a href="#products">Aithilon™</a></li>
+                                                    <li><a href="#products">Aiprilene™</a></li>
+                                                    <li><a href="#products">Nylon</a></li>
+                                                    <li><a href="#products">Polypropylene</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-column">
+                                                <h5>Specialty Sutures</h5>
+                                                <ul>
+                                                    <li><a href="#products">Cardiovascular</a></li>
+                                                    <li><a href="#products">Ophthalmic</a></li>
+                                                    <li><a href="#products">Orthopedic</a></li>
+                                                    <li><a href="#products">Veterinary</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-featured">
+                                        <div class="featured-product">
+                                            <img src="Others/Media/prod-1.jpeg" alt="Featured Suture">
+                                            <div class="featured-content">
+                                                <h5>New Aicryl™ Plus</h5>
+                                                <p>Enhanced absorption with superior tensile strength</p>
+                                                <a href="#products" class="featured-btn">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="#company"><span>Company</span></a></li>
-                        <li><a href="/Others/Media/Product Catalogue - Int.pdf" class="contact-btn btn-green" style="color: white;"><span>Download Catalog</span></a></li>
+                        <li><a href="#core-values"><span>Core Values</span></a></li>
+                        <li><a href="Others/Media/Product Catalogue - Int.pdf" class="contact-btn btn-green" style="color: white;"><span>Download Catalog</span></a></li>
                         <li><a href="#contact" class="contact-btn" style="background-color: blue; color: white;"><span>Contact Us</span></a></li>
                     </ul>
                 </nav>
@@ -51,18 +99,181 @@
                 </div>
             </div>
         </section>
+        
+        <!-- About Sutures Section with Slider -->
+        <section class="about-sutures" id="about-sutures">
+            <div class="container">
+                <!-- Header with text and image -->
+                <div class="about-sutures-header">
+                    <div class="about-sutures-text">
+                        <h2>Understanding Surgical Sutures</h2>
+                        <p>Surgical sutures, commonly known as stitches, are medical devices used to hold body tissues together after an injury or surgery. They play a crucial role in wound healing by approximating tissue edges until natural healing processes provide sufficient strength.</p>
+                        <p>Modern sutures are engineered with precision to provide optimal tensile strength, flexibility, and biocompatibility for various surgical applications.</p>
+                    </div>
+                    <div class="about-sutures-image">
+                        <div class="sutures-slider">
+                            <div class="slide active">
+                                <img src="Others/Media/image_1.jpeg" alt="Surgical Suture 1">
+                            </div>
+                            <div class="slide">
+                                <img src="Others/Media/image_2.jpeg" alt="Surgical Suture 2">
+                            </div>
+                            <div class="slide">
+                                <img src="Others/Media/image_3.jpg" alt="Surgical Suture 3">
+                            </div>
+                            <div class="slider-controls">
+                                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="slider-dots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content with both sides -->
+                <div class="about-sutures-content">
+                    <!-- Left Side Content -->
+                    <div class="content-left">
+                        <div class="suture-types">
+                            <h3><i class="fas fa-syringe"></i> Types of Sutures</h3>
+                            <div class="types-grid">
+                                <div class="type-card">
+                                    <h4>Absorbable Sutures</h4>
+                                    <ul>
+                                        <li>Break down naturally in the body over time</li>
+                                        <li>No removal required - reduces patient discomfort</li>
+                                        <li>Ideal for internal tissues and deep wounds</li>
+                                        <li>Common materials: Polyglactin, Poliglecaprone, Polyglycolic acid (PGA), Polylactic acid (PLA), Polydioxanone (PDS) etc</li>
+                                    </ul>
+                                </div>
+                                <div class="type-card">
+                                    <h4>Non-Absorbable Sutures</h4>
+                                    <ul>
+                                        <li>Remain in body permanently or require removal</li>
+                                        <li>Provide long-term structural support</li>
+                                        <li>Used for skin closure, tendons, and vessels</li>
+                                        <li>Common materials: Polymide, Polypropylene, Nylon, Silk etc</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side Content -->
+                    <div class="content-right">
+                        <div class="suture-features">
+                            <h3><i class="fas fa-star"></i> Key Features</h3>
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Biocompatibility</h4>
+                                        <p>Minimal tissue reaction and excellent compatibility with human tissues for reduced inflammation.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-weight-hanging"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Tensile Strength</h4>
+                                        <p>High strength retention to withstand physiological stresses during the healing process.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-hand-holding-medical"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Easy Handling</h4>
+                                        <p>Excellent knot security, flexibility, and minimal memory for precise surgical control.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-bacteria"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Infection Control</h4>
+                                        <p>Advanced coatings and materials that reduce the risk of surgical site infections.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section class="products" id="products">
+            <div class="wrapper">
+                <div class="header">
+                    <h2 class="main-heading">Our Products</h2>
+                    <p class="description">High-quality surgical sutures designed for optimal performance and patient outcomes.</p>
+                </div>
+                <div class="items">
+                    <div class="item fade-in">
+                        <div class="image-holder">
+                            <img src="Others/Media/prod-1.jpeg" alt="Absorbable Sutures" loading="lazy">
+                        </div>
+                        <div class="content">
+                            <h3>Absorbable Sutures</h3>
+                            <p>Temporary wound support that breaks down naturally in the body over time, eliminating the need for removal.</p>
+                            
+                            <div class="features">
+                                <ul class="points">
+                                    <li>Natural absorption over 60-90 days</li>
+                                    <li>Made from polyglycolic acid & polyglactin</li>
+                                    <li>No removal required - reduces infection risk</li>
+                                    <li>Ideal for internal tissues, General Closure, Orthopaedics and Obstetrics/Gynacology surgery</li>
+                                </ul>
+                            </div>
+                            <button class="details-btn">Further Details</button>
+                        </div>
+                    </div>
+                    
+                    <div class="item fade-in">
+                        <div class="image-holder">
+                            <img src="Others/Media/prod-2.jpeg" alt="Non-Absorbable Sutures" loading="lazy">
+                        </div>
+                        <div class="content">
+                            <h3>Non-Absorbable Sutures</h3>
+                            <p>Permanent wound support designed for long-term tissue reinforcement where removal is required.</p>
+                            
+                            <div class="features">
+                                <ul class="points">
+                                    <li>Long-term permanent wound support</li>
+                                    <li>Made from nylon, polyester & polypropylene</li>
+                                    <li>Superior knot security & minimal memory</li>
+                                    <li>Ideal for skin closures since they do not exhibit tissue adherence</li>
+                                </ul>
+                            </div>
+                            <button class="details-btn">Further Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- 3. QUALITY STANDARDS SECTION -->
         <section class="quality-standards" id="quality">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="heading-blue">Commitment to Quality</h2>
+                    <h2 class="heading-blue">Quality Standards</h2>
                     <p class="subtext">Our products adhere to the highest international standards for safety, performance, and manufacturing excellence.</p>
                 </div>
                 <div class="grid-4-col">
                     <div class="quality-card anim-fade-in">
                         <div class="icon-wrapper"><i class="fas fa-certificate"></i></div>
-                        <h3>EU-MDR Compliant</h3>
+                        <h3>EU-MDR</h3>
                         <p>Meeting rigorous European Medical Device Regulation standards.</p>
                     </div>
                     <div class="quality-card anim-fade-in">
@@ -71,75 +282,106 @@
                         <p>Certified for quality management in medical device manufacturing.</p>
                     </div>
                     <div class="quality-card anim-fade-in">
-                        <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
+                        <div class="icon-wrapper"><i class="fas fa-check-circle"></i></div>
+                        <h3>CDSCO</h3>
+                        <p>Compliant with Central Drugs Standard Control Organization standards.</p>
+                    </div>
+                    <div class="quality-card anim-fade-in">
+                        <div class="icon-wrapper"><i class="fas fa-check-double"></i></div>
                         <h3>CE Marked</h3>
                         <p>Conforming to EU safety, health, and environmental requirements.</p>
                     </div>
-                    <div class="quality-card anim-fade-in">
-                        <div class="icon-wrapper"><i class="fas fa-industry"></i></div>
-                        <h3>WHO-GMP</h3>
-                        <p>Manufactured in accordance with World Health Organization GMP.</p>
-                    </div>
                 </div>
             </div>
         </section>
-
-   
-        <!-- 5. PRODUCTS SECTION -->
-        <section class="products" id="products">
-            <div class="container">
-                <div class="section-title">
-                    <h2 class="heading-blue">Our Products</h2>
-                    <p class="subtext">Premium surgical sutures engineered for precision, strength, and superior patient outcomes.</p>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card anim-fade-in">
-                        <div class="product-image-wrapper"><img src="Others/Media/prod-1.jpeg" alt="Absorbable Sutures" loading="lazy"></div>
-                        <div class="product-content">
-                            <h3>Absorbable Sutures</h3>
-                            <p>Temporary wound support that dissolves naturally as the tissue heals.</p>
-                            <a href="#" class="product-btn">Further Details</a>
-                        </div>
-                    </div>
-                    <div class="product-card anim-fade-in">
-                        <div class="product-image-wrapper"><img src="Others/Media/prod-2.jpeg" alt="Non-Absorbable Sutures" loading="lazy"></div>
-                        <div class="product-content">
-                            <h3>Non-Absorbable Sutures</h3>
-                            <p>Permanent wound support for long-term tissue reinforcement and strength.</p>
-                            <a href="#" class="product-btn">Further Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-             <!-- 4. COMPANY & VALUES SECTION -->
+        
+        <!-- 4. COMPANY & VALUES SECTION -->
         <section class="company-section" id="company">
             <div class="container">
                 <div class="section-title">
                     <h2 class="heading-blue">Our Company</h2>
                     <p class="subtext">Driven by a passion for innovation and a commitment to healthcare excellence.</p>
                 </div>
-                <div class="company-content">
-                    <div class="detail-card anim-fade-in">
-                        <i class="fas fa-bullseye detail-icon"></i>
+                <div class="company-details-grid">
+                    <div class="company-detail-card anim-fade-in">
+                        <div class="detail-icon-wrapper">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
                         <h3>Our Mission</h3>
                         <p>To accelerate medical innovation and improve patient care through advanced research, technology, and accessible solutions.</p>
                     </div>
-                    <div class="detail-card anim-fade-in">
-                        <i class="fas fa-eye detail-icon"></i>
+                    <div class="company-detail-card anim-fade-in">
+                        <div class="detail-icon-wrapper">
+                            <i class="fas fa-eye"></i>
+                        </div>
                         <h3>Our Vision</h3>
                         <p>A world where cutting-edge science makes healthcare more effective, personalized, and available to all who need it.</p>
                     </div>
-                </div>
-                <div class="values-grid">
-                    <div class="values-card anim-fade-in"><h3><i class="fas fa-award"></i> Quality</h3></div>
-                    <div class="values-card anim-fade-in"><h3><i class="fas fa-handshake"></i> Ethics</h3></div>
-                    <div class="values-card anim-fade-in"><h3><i class="fas fa-flask"></i> Innovation</h3></div>
-                    <div class="values-card anim-fade-in"><h3><i class="fas fa-tag"></i> Smart Pricing</h3></div>
+                    <div class="company-detail-card anim-fade-in">
+                        <div class="detail-icon-wrapper">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Our Growth</h3>
+                        <p>Over 15 years of experience with a global presence and partnerships with leading healthcare institutions.</p>
+                    </div>
+                    <div class="company-detail-card anim-fade-in">
+                        <div class="detail-icon-wrapper">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Our Achievements</h3>
+                        <p>Multiple industry awards and recognition for innovation in biotechnology and pharmaceutical research.</p>
+                    </div>
                 </div>
             </div>
         </section>
-
+        
+        <!-- CORE VALUES SECTION WITH IMAGES -->
+        <section class="core-values-section" id="core-values">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="heading-blue">Our Core Values</h2>
+                    <p class="subtext">The principles that guide everything we do at Aipri Lifesciences</p>
+                </div>
+                <div class="core-values-grid">
+                    <div class="value-card anim-fade-in">
+                        <div class="value-image">
+                            <img src="Others/Media/quality.jpg" alt="Quality without Compromise">
+                        </div>
+                        <div class="value-content">
+                            <h3>Quality without Compromise</h3>
+                            <p>We maintain the highest standards in every product we create, ensuring safety and efficacy for healthcare professionals and patients.</p>
+                        </div>
+                    </div>
+                    <div class="value-card anim-fade-in">
+                        <div class="value-image">
+                            <img src="Others/Media/ethics.jpg" alt="Ethical & Transparent Business Practices">
+                        </div>
+                        <div class="value-content">
+                            <h3>Ethical & Transparent Business Practices</h3>
+                            <p>We conduct our business with integrity, honesty, and transparency, building trust with our partners and customers.</p>
+                        </div>
+                    </div>
+                    <div class="value-card anim-fade-in">
+                        <div class="value-image">
+                            <img src="Others/Media/innovation.jpg" alt="Science-Driven Innovation">
+                        </div>
+                        <div class="value-content">
+                            <h3>Science-Driven Innovation</h3>
+                            <p>We invest in research and development to create cutting-edge medical solutions that address real healthcare challenges.</p>
+                        </div>
+                    </div>
+                    <div class="value-card anim-fade-in">
+                        <div class="value-image">
+                            <img src="Others/Media/affordability.jpg" alt="Genuinely Affordable Pricing">
+                        </div>
+                        <div class="value-content">
+                            <h3>Genuinely Affordable Pricing</h3>
+                            <p>We believe quality healthcare should be accessible to all, which is why we offer competitive pricing without compromising on quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- 6. CONTACT SECTION (REPLICA) -->
         <section class="contact-section" id="contact">
@@ -182,6 +424,7 @@
                         <li><a href="#company">Company</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#quality">Quality</a></li>
+                        <li><a href="#core-values">Core Values</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -240,11 +483,11 @@
     <!-- 9. FLOATING ACTION BUTTONS -->
     <div class="floating-action-buttons">
         <button class="fab-btn" id="scrollTopBtn" aria-label="Scroll to Top"><i class="fas fa-chevron-up"></i></button>
-        <button class="fab-btn" id="darkModeBtn" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
         <a href="mailto:info@aiprilife.com" class="fab-btn email-btn" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
         <a href="https://wa.me/917984532859" class="fab-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+        <button class="fab-btn inquire-now-btn" id="inquireNowBtn" aria-label="Inquire Now"><i class="fas fa-question-circle"></i></button>
     </div>
 
-    <script src="Others/JAVASCRIPT/script.js"></script>
+    <script src="/Others/JAVASCRIPT/script.js"></script>
 </body>
 </html>
