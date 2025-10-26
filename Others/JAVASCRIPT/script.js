@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const inquiryModal = document.getElementById('inquiryModal');
     const inquiryBtn = document.getElementById('inquiryBtn');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
-    const slider = document.querySelector('.sutures-slider');
     const animatedElements = document.querySelectorAll('.anim-fade-in');
     
     // --- 2. UTILITY: THROTTLE FOR SCROLL PERFORMANCE ---
@@ -53,37 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', throttle(handleScroll, 100));
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // --- 6. IMAGE SLIDER ---
-    if (slider) {
-        let currentSlide = 0;
-        const slides = slider.querySelectorAll('.slide');
-        const dotsContainer = document.querySelector('.slider-dots');
-        if (slides.length > 0) {
-            slides.forEach((_, i) => {
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                dot.addEventListener('click', () => showSlide(i));
-                dotsContainer.appendChild(dot);
-            });
-            const dots = dotsContainer.querySelectorAll('.dot');
-            const showSlide = (index) => {
-                currentSlide = (index + slides.length) % slides.length;
-                slides.forEach(s => s.classList.remove('active'));
-                dots.forEach(d => d.classList.remove('active'));
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
-            };
-            let slideInterval = setInterval(() => showSlide(currentSlide + 1), 5000);
-            slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            slider.addEventListener('mouseleave', () => {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(() => showSlide(currentSlide + 1), 5000);
-            });
-            showSlide(0);
-        }
-    }
-
-    // --- 7. MODAL ---
+    // --- 6. MODAL ---
     const toggleModal = (isActive) => {
         if (inquiryModal) inquiryModal.classList.toggle('active', isActive);
     };
@@ -93,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === inquiryModal) toggleModal(false);
     });
 
-    // --- 8. ANIMATIONS ON SCROLL ---
+    // --- 7. ANIMATIONS ON SCROLL ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -103,4 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
     animatedElements.forEach(el => observer.observe(el));
+    
+    // --- 8. DYNAMIC YEAR IN FOOTER ---
+    const currentYearEl = document.getElementById('currentYear');
+    if(currentYearEl) {
+        currentYearEl.textContent = new Date().getFullYear();
+    }
 });

@@ -10,66 +10,82 @@
 <body>
 
     <!-- 1. HEADER & NAVIGATION -->
-    <!-- HEADER & NAVIGATION -->
     <header id="header">
         <div class="container">
             <div class="nav-container">
-                <a href="#home" class="logo-container"><img src="Media/company-img.png" alt="Aipri Lifesciences Logo" class="logo-img"></a>
+                <a href="#home" class="logo-container">
+                    <img src="/Others/Media/company-img.png" alt="Aipri Lifesciences Logo" class="logo-img">
+                </a>
                 <nav id="nav">
                     <ul>
                         <li><a href="#home"><span>Home</span></a></li>
-                        <li><a href="#about"><span>About</span></a></li>
+                        <li><a href="#quality"><span>Quality</span></a></li>
+                        <li><a href="#company"><span>Company</span></a></li>
                         <li><a href="#products"><span>Products</span></a></li>
                         <li><a href="#" class="contact-btn btn-green"><span>Download Catalog</span></a></li>
                         <li><a href="#contact" class="contact-btn"><span>Contact Us</span></a></li>
                     </ul>
                 </nav>
-                <div class="mobile-menu-button"><i class="fas fa-bars"></i></div>
+                <div class="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
+        <!-- 2. HERO SECTION -->
         <section class="hero-section" id="home">
             <div class="hero-overlay"></div>
             <div class="container hero-content">
                 <h1>Surgical Precision, Smart Pricing</h1>
                 <p>Experience the highest quality surgical sutures designed for precision, strength, and optimal patient outcomes.</p>
+                <!-- Add this new div for buttons -->
+                <div class="hero-buttons">
+                    <a href="#products" class="hero-btn btn-explore">
+                        <i class="fas fa-box-open"></i> Explore Products
+                    </a>
+                    <a href="#contact" class="hero-btn btn-contact-hero">
+                        <i class="fas fa-paper-plane"></i> Contact Us Now
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- 3. UNDERSTANDING SUTURES SECTION -->
-        <section class="about-sutures" id="about">
+        <!-- 3. QUALITY STANDARDS SECTION -->
+        <section class="quality-standards" id="quality">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="heading-blue">Understanding Surgical Sutures</h2>
-                    <p class="subtext">Sutures are essential medical devices used to hold tissues together after an injury or surgery, playing a crucial role until natural healing provides sufficient strength.</p>
+                    <h2 class="heading-blue">Commitment to Quality</h2>
+                    <p class="subtext">Our products adhere to the highest international standards for safety, performance, and manufacturing excellence.</p>
                 </div>
-                <div class="about-content">
-                    <div class="about-slider-wrapper anim-fade-in">
-                        <div class="sutures-slider">
-                            <div class="slide active"><img src="Media/image_1.jpeg" alt="Surgical Suture Application"></div>
-                            <div class="slide"><img src="Media/image_2.jpeg" alt="Close-up of a Suture"></div>
-                            <div class="slide"><img src="Media/image_3.jpg" alt="Types of Sutures"></div>
-                        </div>
-                        <div class="slider-dots"></div>
+                <div class="grid-4-col">
+                    <div class="quality-card anim-fade-in">
+                        <div class="icon-wrapper"><i class="fas fa-certificate"></i></div>
+                        <h3>EU-MDR Compliant</h3>
+                        <p>Meeting rigorous European Medical Device Regulation standards.</p>
                     </div>
-                    <div class="about-text anim-fade-in">
-                        <div class="suture-type-card">
-                            <h3>Absorbable Sutures</h3>
-                            <p>Designed to break down naturally in the body over time. Ideal for internal tissues, eliminating the need for removal.</p>
-                        </div>
-                        <div class="suture-type-card">
-                            <h3>Non-Absorbable Sutures</h3>
-                            <p>Provide long-term structural support and require removal post-healing. Commonly used for skin closure and tendons.</p>
-                        </div>
+                    <div class="quality-card anim-fade-in">
+                        <div class="icon-wrapper"><i class="fas fa-award"></i></div>
+                        <h3>ISO 13485:2016</h3>
+                        <p>Certified for quality management in medical device manufacturing.</p>
+                    </div>
+                    <div class="quality-card anim-fade-in">
+                        <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
+                        <h3>CE Marked</h3>
+                        <p>Conforming to EU safety, health, and environmental requirements.</p>
+                    </div>
+                    <div class="quality-card anim-fade-in">
+                        <div class="icon-wrapper"><i class="fas fa-industry"></i></div>
+                        <h3>WHO-GMP</h3>
+                        <p>Manufactured in accordance with World Health Organization GMP.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PRODUCTS SECTION -->
+   
+        <!-- 5. PRODUCTS SECTION -->
         <section class="products" id="products">
             <div class="container">
                 <div class="section-title">
@@ -78,7 +94,7 @@
                 </div>
                 <div class="products-grid">
                     <div class="product-card anim-fade-in">
-                        <div class="product-image-wrapper"><img src="Media/prod-1.jpeg" alt="Absorbable Sutures" loading="lazy"></div>
+                        <div class="product-image-wrapper"><img src="/Others/Media/prod-1.jpeg" alt="Absorbable Sutures" loading="lazy"></div>
                         <div class="product-content">
                             <h3>Absorbable Sutures</h3>
                             <p>Temporary wound support that dissolves naturally as the tissue heals.</p>
@@ -86,7 +102,7 @@
                         </div>
                     </div>
                     <div class="product-card anim-fade-in">
-                        <div class="product-image-wrapper"><img src="Media/prod-2.jpeg" alt="Non-Absorbable Sutures" loading="lazy"></div>
+                        <div class="product-image-wrapper"><img src="/Others/Media/prod-2.jpeg" alt="Non-Absorbable Sutures" loading="lazy"></div>
                         <div class="product-content">
                             <h3>Non-Absorbable Sutures</h3>
                             <p>Permanent wound support for long-term tissue reinforcement and strength.</p>
@@ -96,8 +112,36 @@
                 </div>
             </div>
         </section>
+             <!-- 4. COMPANY & VALUES SECTION -->
+        <section class="company-section" id="company">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="heading-blue">Our Company</h2>
+                    <p class="subtext">Driven by a passion for innovation and a commitment to healthcare excellence.</p>
+                </div>
+                <div class="company-content">
+                    <div class="detail-card anim-fade-in">
+                        <i class="fas fa-bullseye detail-icon"></i>
+                        <h3>Our Mission</h3>
+                        <p>To accelerate medical innovation and improve patient care through advanced research, technology, and accessible solutions.</p>
+                    </div>
+                    <div class="detail-card anim-fade-in">
+                        <i class="fas fa-eye detail-icon"></i>
+                        <h3>Our Vision</h3>
+                        <p>A world where cutting-edge science makes healthcare more effective, personalized, and available to all who need it.</p>
+                    </div>
+                </div>
+                <div class="values-grid">
+                    <div class="values-card anim-fade-in"><h3><i class="fas fa-award"></i> Quality</h3></div>
+                    <div class="values-card anim-fade-in"><h3><i class="fas fa-handshake"></i> Ethics</h3></div>
+                    <div class="values-card anim-fade-in"><h3><i class="fas fa-flask"></i> Innovation</h3></div>
+                    <div class="values-card anim-fade-in"><h3><i class="fas fa-tag"></i> Smart Pricing</h3></div>
+                </div>
+            </div>
+        </section>
+
         
-        <!-- 5. CONTACT SECTION (REPLICA) -->
+        <!-- 6. CONTACT SECTION (REPLICA) -->
         <section class="contact-section" id="contact">
             <div class="contact-banner">
                 <div class="container">
@@ -110,14 +154,10 @@
                     <h3 class="contact-card-heading">Contact Information</h3>
                     <div class="contact-info-grid">
                         <div class="info-box">
-                            <i class="fas fa-phone-alt"></i>
-                            <h4>Phone Number</h4>
-                            <p>+91 79845 32859</p>
+                            <i class="fas fa-phone-alt"></i><h4>Phone Number</h4><p>+91 79845 32859</p>
                         </div>
                         <div class="info-box">
-                            <i class="fas fa-envelope"></i>
-                            <h4>Email Address</h4>
-                            <p>info@aiprilife.com</p>
+                            <i class="fas fa-envelope"></i><h4>Email Address</h4><p>info@aiprilife.com</p>
                         </div>
                     </div>
                     <div class="contact-button-group">
@@ -129,13 +169,59 @@
             </div>
         </section>
     </main>
+    <br><br>
 
-    <!-- 6. FOOTER -->
+    <!-- 7. FOOTER -->
     <footer class="site-footer">
-        <!-- Add your footer content here -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#company">Company</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#quality">Quality</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="#">Aicryl™ Sutures</a></li>
+                        <li><a href="#">Aithilon™ Sutures</a></li>
+                        <li><a href="#">Aiprilene™ Sutures</a></li>
+                        <li><a href="#">MonoPril™ Sutures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Aipri Lifesciences LLP</h3>
+                    <p><i class="fas fa-phone"></i> +91 79845 32859</p>
+                    <p><i class="fas fa-envelope"></i> info@aiprilife.com</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/917984532859" class="social-btn btn-whatsapp-footer">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="tel:+917984532859" class="social-btn btn-call-footer">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="#" class="social-btn btn-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Business Info</h3>
+                    <p><strong>GST No:</strong> 24ACIFA722431ZF</p>
+                    <p><strong>CIN:</strong> ACL-9294</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="currentYear"></span> Aipri Lifesciences LLP. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- 7. INQUIRY FORM MODAL -->
+    <!-- 8. INQUIRY FORM MODAL -->
     <div class="modal-overlay" id="inquiryModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -145,17 +231,18 @@
             <form class="inquiry-form" id="inquiryForm">
                 <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
                 <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
-                <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
                 <div class="form-group"><label for="message">Your Message *</label><textarea id="message" name="message" rows="4" required></textarea></div>
                 <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Inquiry</button>
             </form>
         </div>
     </div>
 
-    <!-- 8. FLOATING ACTION BUTTONS -->
+    <!-- 9. FLOATING ACTION BUTTONS -->
     <div class="floating-action-buttons">
         <button class="fab-btn" id="scrollTopBtn" aria-label="Scroll to Top"><i class="fas fa-chevron-up"></i></button>
         <button class="fab-btn" id="darkModeBtn" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+        <a href="mailto:info@aiprilife.com" class="fab-btn email-btn" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/917984532859" class="fab-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script src="/Others/JAVASCRIPT/script.js"></script>
