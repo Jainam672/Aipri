@@ -78,4 +78,42 @@ document.addEventListener('DOMContentLoaded', () => {
     if(currentYearEl) {
         currentYearEl.textContent = new Date().getFullYear();
     }
+
+    // --- 9. FORM SUBMISSION ---
+    const inquiryForm = document.getElementById('inquiryForm');
+    if(inquiryForm) {
+        inquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(inquiryForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Here you would typically send the data to a server
+            // For now, we'll just show a success message
+            console.log('Form submitted:', data);
+            alert('Thank you for your inquiry! We will get back to you soon.');
+            
+            // Close modal and reset form
+            if(inquiryModal) inquiryModal.classList.remove('active');
+            inquiryForm.reset();
+        });
+    }
 });
