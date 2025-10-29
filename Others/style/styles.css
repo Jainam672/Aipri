@@ -1202,7 +1202,7 @@ main>section:nth-of-type(odd) {
     font-size: 1.3rem;
 }
 
-/* 15. CORE VALUES SECTION */
+/* 15. CORE VALUES SECTION
 .core-values-section {
     background-color: var(--light-bg);
     transition: background-color var(--transition);
@@ -1256,8 +1256,99 @@ main>section:nth-of-type(odd) {
 .value-content p {
     color: var(--text-muted);
     line-height: 1.6;
-}
+} */
 
+  .corevalue-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .corevalue-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .corevalue-title-container {
+            margin-bottom: 50px;
+        }
+
+        .corevalue-main-title {
+            font-size: 36px;
+            color: #0d3d6e; /* Dark Blue */
+            margin-bottom: 10px;
+        }
+
+        .corevalue-subtitle {
+            font-size: 18px;
+            color: #6c757d; /* Grey */
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .corevalue-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .corevalue-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 35px 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .corevalue-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .corevalue-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px auto;
+            background-color: #0d3d6e; /* Dark Blue background */
+            border-radius: 50%; /* Makes it a circle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .corevalue-icon {
+            width: 45px; /* Adjust icon size as needed */
+            height: auto;
+        }
+
+        .corevalue-content {
+            margin-top: 20px;
+        }
+        
+        .corevalue-content-title {
+            font-size: 20px;
+            color: #0d3d6e; /* Dark Blue */
+            margin-bottom: 15px;
+        }
+
+        .corevalue-content-text {
+            font-size: 15px;
+            color: #6c757d; /* Grey */
+            line-height: 1.6;
+        }
+        
+        /* Responsive design for tablets and mobile */
+        @media (max-width: 992px) {
+            .corevalue-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .corevalue-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 /* 16. RESPONSIVE STYLES FOR NEW SECTIONS */
 @media (max-width: 1024px) {
     .about-sutures-header {
