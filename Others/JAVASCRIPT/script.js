@@ -682,105 +682,105 @@ function initScrollAnimations() {
     });
 }
 
-// 5. MODAL FUNCTIONALITY
-function initModal() {
-    const inquiryModal = document.getElementById('inquiryModal');
-    const inquiryBtn = document.getElementById('inquiryBtn');
-    const modalCloseBtn = document.getElementById('modalCloseBtn');
-    const inquiryForm = document.getElementById('inquiryForm');
+// // 5. MODAL FUNCTIONALITY
+// function initModal() {
+//     const inquiryModal = document.getElementById('inquiryModal');
+//     const inquiryBtn = document.getElementById('inquiryBtn');
+//     const modalCloseBtn = document.getElementById('modalCloseBtn');
+//     const inquiryForm = document.getElementById('inquiryForm');
     
-    // Open modal
-    if (inquiryBtn) {
-        inquiryBtn.addEventListener('click', function() {
-            inquiryModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        });
-    }
+//     // Open modal
+//     if (inquiryBtn) {
+//         inquiryBtn.addEventListener('click', function() {
+//             inquiryModal.classList.add('active');
+//             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+//         });
+//     }
     
-    // Close modal
-    function closeModal() {
-        inquiryModal.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
+//     // Close modal
+//     function closeModal() {
+//         inquiryModal.classList.remove('active');
+//         document.body.style.overflow = ''; // Restore scrolling
+//     }
     
-    if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', closeModal);
-    }
+//     if (modalCloseBtn) {
+//         modalCloseBtn.addEventListener('click', closeModal);
+//     }
     
-    // Close modal when clicking outside
-    inquiryModal.addEventListener('click', function(e) {
-        if (e.target === inquiryModal) {
-            closeModal();
-        }
-    });
+//     // Close modal when clicking outside
+//     inquiryModal.addEventListener('click', function(e) {
+//         if (e.target === inquiryModal) {
+//             closeModal();
+//         }
+//     });
     
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && inquiryModal.classList.contains('active')) {
-            closeModal();
-        }
-    });
+//     // Close modal with Escape key
+//     document.addEventListener('keydown', function(e) {
+//         if (e.key === 'Escape' && inquiryModal.classList.contains('active')) {
+//             closeModal();
+//         }
+//     });
     
-    // Form submission
-    if (inquiryForm) {
-        inquiryForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+//     // Form submission
+//     if (inquiryForm) {
+//         inquiryForm.addEventListener('submit', function(e) {
+//             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(inquiryForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
+//             // Get form data
+//             const formData = new FormData(inquiryForm);
+//             const name = formData.get('name');
+//             const email = formData.get('email');
+//             const message = formData.get('message');
             
-            // In a real application, you would send this data to a server
-            console.log('Inquiry Form Submission:', { name, email, message });
+//             // In a real application, you would send this data to a server
+//             console.log('Inquiry Form Submission:', { name, email, message });
             
-            // Show success message
-            alert('Thank you for your inquiry! We will get back to you soon.');
+//             // Show success message
+//             alert('Thank you for your inquiry! We will get back to you soon.');
             
-            // Reset form and close modal
-            inquiryForm.reset();
-            closeModal();
-        });
-    }
-}
+//             // Reset form and close modal
+//             inquiryForm.reset();
+//             closeModal();
+//         });
+//     }
+// }
 
-// 6. FLOATING BUTTONS FUNCTIONALITY
-function initFloatingButtons() {
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    const inquireNowBtn = document.getElementById('inquireNowBtn');
-    const inquiryModal = document.getElementById('inquiryModal');
+// // 6. FLOATING BUTTONS FUNCTIONALITY
+// function initFloatingButtons() {
+//     const scrollTopBtn = document.getElementById('scrollTopBtn');
+//     const inquireNowBtn = document.getElementById('inquireNowBtn');
+//     const inquiryModal = document.getElementById('inquiryModal');
     
-    // Scroll to top functionality
-    if (scrollTopBtn) {
-        scrollTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+//     // Scroll to top functionality
+//     if (scrollTopBtn) {
+//         scrollTopBtn.addEventListener('click', function() {
+//             window.scrollTo({
+//                 top: 0,
+//                 behavior: 'smooth'
+//             });
+//         });
         
-        // Show/hide scroll to top button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollTopBtn.style.display = 'flex';
-            } else {
-                scrollTopBtn.style.display = 'none';
-            }
-        });
+//         // Show/hide scroll to top button based on scroll position
+//         window.addEventListener('scroll', function() {
+//             if (window.scrollY > 300) {
+//                 scrollTopBtn.style.display = 'flex';
+//             } else {
+//                 scrollTopBtn.style.display = 'none';
+//             }
+//         });
         
-        // Initially hide the button
-        scrollTopBtn.style.display = 'none';
-    }
+//         // Initially hide the button
+//         scrollTopBtn.style.display = 'none';
+//     }
     
-    // Inquire Now button functionality
-    if (inquireNowBtn && inquiryModal) {
-        inquireNowBtn.addEventListener('click', function() {
-            inquiryModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-}
+//     // Inquire Now button functionality
+//     if (inquireNowBtn && inquiryModal) {
+//         inquireNowBtn.addEventListener('click', function() {
+//             inquiryModal.classList.add('active');
+//             document.body.style.overflow = 'hidden';
+//         });
+//     }
+// }
 
 // 7. PRODUCT DETAILS BUTTONS
 function initProductDetailsButtons() {
@@ -969,3 +969,149 @@ window.addEventListener('scroll', function() {
                 });
             }
         });
+// 5. MODAL FUNCTIONALITY
+function initModal() {
+    const inquiryModal = document.getElementById('inquiryModal');
+    const inquiryBtn = document.getElementById('inquiryBtn');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const inquiryForm = document.getElementById('inquiryForm');
+    
+    // Open modal
+    if (inquiryBtn) {
+        inquiryBtn.addEventListener('click', function() {
+            inquiryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Close modal
+    function closeModal() {
+        inquiryModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeModal);
+    }
+    
+    // Close modal when clicking outside
+    inquiryModal.addEventListener('click', function(e) {
+        if (e.target === inquiryModal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && inquiryModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    // Form submission
+    if (inquiryForm) {
+        inquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create inquiry object
+            const inquiry = {
+                id: Date.now(), // Unique ID based on timestamp
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date().toLocaleString('en-US'),
+                date: new Date().toISOString()
+            };
+            
+            // Save to localStorage
+            saveInquiry(inquiry);
+            
+            // Show success message
+            alert('Thank you for your inquiry! We will get back to you soon.');
+            
+            // Reset form and close modal
+            inquiryForm.reset();
+            closeModal();
+        });
+    }
+}
+
+// Function to save inquiry to localStorage
+function saveInquiry(inquiry) {
+    try {
+        console.log('Saving inquiry:', inquiry);
+        
+        // Get existing inquiries or initialize empty array
+        let existingInquiries = [];
+        const storedData = localStorage.getItem('productInquiries');
+        
+        if (storedData) {
+            existingInquiries = JSON.parse(storedData);
+            console.log('Found existing inquiries:', existingInquiries.length);
+        }
+        
+        // Add new inquiry
+        existingInquiries.push(inquiry);
+        
+        // Save back to localStorage
+        localStorage.setItem('productInquiries', JSON.stringify(existingInquiries));
+        
+        console.log('Inquiry saved successfully. Total inquiries:', existingInquiries.length);
+        
+        // Verify it was saved
+        const verifyData = localStorage.getItem('productInquiries');
+        console.log('Verification - stored data:', verifyData);
+        
+    } catch (error) {
+        console.error('Error saving inquiry:', error);
+        alert('Error saving your inquiry. Please try again.');
+    }
+}
+
+// 6. FLOATING BUTTONS FUNCTIONALITY
+function initFloatingButtons() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    const inquireNowBtn = document.getElementById('inquireNowBtn');
+    const inquiryModal = document.getElementById('inquiryModal');
+    
+    // Scroll to top functionality
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Show/hide scroll to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        // Initially hide the button
+        scrollTopBtn.style.display = 'none';
+    }
+    
+    // Inquire Now button functionality
+    if (inquireNowBtn && inquiryModal) {
+        inquireNowBtn.addEventListener('click', function() {
+            inquiryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initModal();
+    initFloatingButtons();
+});
