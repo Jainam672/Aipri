@@ -872,3 +872,100 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 console.log('Aipri Lifesciences script loaded successfully');
+
+
+
+window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.medical-navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Active nav link highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.medical-nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Mobile submenu toggle
+            const mobileSubmenuButtons = document.querySelectorAll('.medical-dropdown-submenu .medical-dropdown-item');
+            
+            mobileSubmenuButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const submenu = this.closest('.medical-dropdown-submenu');
+                        const isOpen = submenu.classList.contains('mobile-open');
+                        
+                        // Close all other submenus
+                        document.querySelectorAll('.medical-dropdown-submenu.mobile-open').forEach(openSubmenu => {
+                            if (openSubmenu !== submenu) {
+                                openSubmenu.classList.remove('mobile-open');
+                            }
+                        });
+                        
+                        // Toggle current submenu
+                        if (!isOpen) {
+                            submenu.classList.add('mobile-open');
+                        } else {
+                            submenu.classList.remove('mobile-open');
+                        }
+                    }
+                });
+            });
+
+            // Close submenus when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 991) {
+                    if (!e.target.closest('.medical-dropdown-submenu')) {
+                        document.querySelectorAll('.medical-dropdown-submenu.mobile-open').forEach(submenu => {
+                            submenu.classList.remove('mobile-open');
+                        });
+                    }
+                }
+            });
+
+            // Enhanced dropdown submenu handling for desktop
+            if (window.innerWidth > 992) {
+                const dropdownSubmenus = document.querySelectorAll('.medical-dropdown-submenu');
+                
+                dropdownSubmenus.forEach(function(item) {
+                    item.addEventListener('mouseenter', function() {
+                        const submenu = this.querySelector('.medical-dropdown-menu');
+                        if (submenu) {
+                            submenu.style.display = 'block';
+                        }
+                    });
+                    
+                    item.addEventListener('mouseleave', function(e) {
+                        // Check if mouse is leaving to a non-child element
+                        if (!this.contains(e.relatedTarget)) {
+                            const submenu = this.querySelector('.medical-dropdown-menu');
+                            if (submenu) {
+                                submenu.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            // Reset mobile submenus when switching to desktop
+            if (window.innerWidth > 991) {
+                document.querySelectorAll('.medical-dropdown-submenu.mobile-open').forEach(submenu => {
+                    submenu.classList.remove('mobile-open');
+                });
+            }
+        });

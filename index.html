@@ -6,81 +6,98 @@
     <title>Aipri Lifesciences | Professional Surgical Sutures</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/Others/style/styles.css">
+        <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-      <header id="header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg medical-navbar fixed-top">
         <div class="container">
-            <div class="nav-container">
-                <a href="#home" class="logo-container">
-                    <img src="Others/Media/company-img.png" alt="Aipri Lifesciences Logo" class="logo-img">
-                </a>
-                <nav id="nav">
-                    <ul>
-                        <li><a href="#home"><span>Home</span></a></li>
-                        <li><a href="#quality"><span>Quality</span></a></li>
-                        <li class="dropdown">
-                            <a href="#products"><span>Products <i class="fas fa-chevron-down"></i></span></a>
-                            <div class="dropdown-menu">
-                                <div class="dropdown-container">
-                                    <div class="dropdown-section">
-                                        <h4>Human Sutures</h4>
-                                        <div class="dropdown-columns">
-                                            <div class="dropdown-column">
-                                                <h5>Absorbable Sutures</h5>
-                                                <ul>
-                                                    <li><a href="#products">Aicryl™</a></li>
-                                                    <li><a href="#products">MonoPril™</a></li>
-                                                    <li><a href="#products">Polyglactin</a></li>
-                                                    <li><a href="#products">Poliglecaprone</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="dropdown-column">
-                                                <h5>Non-Absorbable Sutures</h5>
-                                                <ul>
-                                                    <li><a href="#products">Aithilon™</a></li>
-                                                    <li><a href="#products">Aiprilene™</a></li>
-                                                    <li><a href="#products">Nylon</a></li>
-                                                    <li><a href="#products">Polypropylene</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="dropdown-column">
-                                                <h5>Specialty Sutures</h5>
-                                                <ul>
-                                                    <li><a href="#products">Cardiovascular</a></li>
-                                                    <li><a href="#products">Ophthalmic</a></li>
-                                                    <li><a href="#products">Orthopedic</a></li>
-                                                    <li><a href="#products">Veterinary</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-featured">
-                                        <div class="featured-product">
-                                            <img src="Others/Media/prod-1.jpeg" alt="Featured Suture">
-                                            <div class="featured-content">
-                                                <h5>New Aicryl™ Plus</h5>
-                                                <p>Enhanced absorption with superior tensile strength</p>
-                                                <a href="#products" class="featured-btn">Learn More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#company"><span>Company</span></a></li>
-                        <li><a href="#core-values"><span>Core Values</span></a></li>
-                        <li><a href="Others/Media/Product Catalogue - Int.pdf" class="contact-btn btn-green" style="color: white;"><span>Download Catalog</span></a></li>
-                        <li><a href="#contact" class="contact-btn" style="background-color: blue; color: white;"><span>Contact Us</span></a></li>
-                    </ul>
-                </nav>
-                <div class="mobile-menu-button">
-                    <i class="fas fa-bars"></i>
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="/Others/Media/company-img.png" alt="Medical Supplies Logo" class="medical-logo">
+            </a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler medical-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#medicalNavbarContent">
+                <span class="navbar-toggler-icon medical-navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse medical-navbar-collapse" id="medicalNavbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link active" href="#">Home</a>
+                    </li>
+                    
+                    <!-- Products Dropdown -->
+                    <li class="nav-item dropdown medical-dropdown">
+                        <a class="nav-link medical-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Products
+                        </a>
+                        <ul class="dropdown-menu medical-dropdown-menu">
+                            <div class="medical-category-header">SUTURES</div>
+                            
+                            <!-- Absorbable -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i>Absorbable
+                                </button>
+                              
+                            </li>
+                            
+                            <!-- Non-Absorbable -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i>Non-Absorbable
+                                </button>
+                              
+                            </li>
+                            
+                            <!-- Other Products -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i>Other Products
+                                </button>
+                               
+                            </li>
+                            
+                            <li><hr class="medical-dropdown-divider"></li>
+                            <li><a class="dropdown-item medical-dropdown-item" href="#"></i></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="#">Quality Standards</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="#">Our Company</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="#">Our Core Values</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Buttons -->
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn medical-btn-catalog" style="background-color: green; color: white;">
+                        <i class="fas fa-download me-2"></i>Download Catalog
+                    </button>
+                    <button class="btn medical-btn-contact" style="background-color: var(--accent-call-blue); color: white;">
+                        <i class="fas fa-phone me-2"></i>Contact Us
+                    </button>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <main>
         <!-- 2. HERO SECTION -->
         <section class="hero-section" id="home">
@@ -465,13 +482,13 @@
     </footer>
 
     <!-- 8. INQUIRY FORM MODAL -->
-    <div class="modal-overlay" id="inquiryModal">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div class="modal-overlay" id="inquiryModal" >
+        <div class="modal-content" style="background-color: white; border-radius: 8px;">
+            <div class="modal-header" >
                 <h3 class="heading-blue">Product Inquiry Form</h3>
                 <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
             </div>
-            <form class="inquiry-form" id="inquiryForm">
+            <form class="inquiry-form" id="inquiryForm" style="background-color: white;">
                 <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
                 <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
                 <div class="form-group"><label for="message">Your Message *</label><textarea id="message" name="message" rows="4" required></textarea></div>

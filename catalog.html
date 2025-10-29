@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aipri Lifesciences - Product Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables and Base Styles */
+        :root {
+            --primary-blue: #244F71;
+            --secondary-blue: #1e40af;
+            --light-blue-bg: #f0f5f9;
+            --text-dark: #212529;
+            --text-light: #f8f9fa;
+            --text-muted: #6c757d;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* Catalog Header */
+        .catalog-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--text-light);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .catalog-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        .catalog-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Category Section Styling */
+        .category-section {
+            margin-bottom: 50px;
+        }
+        .category-title {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        /* Product Grid Styling */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Product Card Styling */
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-content h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .card-content .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .card-content .btn:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .catalog-header h1 {
+                font-size: 2rem;
+            }
+            .category-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="catalog-header">
+        <h1>Our Product Catalog</h1>
+        <p>Explore our range of high-quality surgical sutures and medical products.</p>
+    </header>
+
+    <main class="container">
+        <!-- Absorbable Sutures -->
+        <section class="category-section">
+            <h2 class="category-title">Absorbable Sutures</h2>
+            <div class="product-grid">
+                <!-- Aicryl Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/244F71/FFFFFF?text=Aicryl" alt="Aicryl">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aicryl</h3>
+                            <p>Braided & Coated Polyglactin 910</p>
+                        </div>
+                        <a href="aicryl.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Aicryl Rapid Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/1e40af/FFFFFF?text=Aicryl+Rapid" alt="Aicryl Rapid">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aicryl Rapid</h3>
+                            <p>Fast-Absorbing Polyglactin 910</p>
+                        </div>
+                        <a href="aicryl-rapid.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Aicryl PDS Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/198754/FFFFFF?text=Aicryl+PDS" alt="Aicryl PDS">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aicryl PDS</h3>
+                            <p>Monofilament Polydioxanone</p>
+                        </div>
+                        <a href="aicryl-pds.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Aicryl-O Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/f59e0b/FFFFFF?text=Aicryl-O" alt="Aicryl-O">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aicryl - O</h3>
+                            <p>Braided & Coated Polyglycolic Acid</p>
+                        </div>
+                        <a href="aicryl-o.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Monopril Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/0d6efd/FFFFFF?text=Monopril" alt="Monopril">
+                    <div class="card-content">
+                        <div>
+                            <h3>Monopril</h3>
+                            <p>Monofilament Polyglecaprone 25</p>
+                        </div>
+                        <a href="monopril.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Prigut Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/6f42c1/FFFFFF?text=Prigut" alt="Prigut">
+                    <div class="card-content">
+                        <div>
+                            <h3>Prigut</h3>
+                            <p>Natural Absorbable Catgut Suture</p>
+                        </div>
+                        <a href="prigut.html" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Non-Absorbable Sutures -->
+        <section class="category-section">
+            <h2 class="category-title">Non-Absorbable Sutures</h2>
+            <div class="product-grid">
+                <!-- Aiprilene Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/6f42c1/FFFFFF?text=Aiprilene" alt="Aiprilene">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aiprilene</h3>
+                            <p>Monofilament Polypropylene Suture</p>
+                        </div>
+                        <a href="aiprilene.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Aipribond Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/20c997/FFFFFF?text=Aipribond" alt="Aipribond">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aipribond</h3>
+                            <p>Braided & Coated Polyester Suture</p>
+                        </div>
+                        <a href="aipribond.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Aithilon Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/fd7e14/FFFFFF?text=Aithilon" alt="Aithilon">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aithilon</h3>
+                            <p>Monofilament Polyamide (Nylon)</p>
+                        </div>
+                        <a href="aithilon.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Prisil Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/e83e8c/FFFFFF?text=Prisil" alt="Prisil">
+                    <div class="card-content">
+                        <div>
+                            <h3>Prisil</h3>
+                            <p>Natural Black Braided Silk Suture</p>
+                        </div>
+                        <a href="prisil.html" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Products -->
+        <section class="category-section">
+            <h2 class="category-title">Other Products</h2>
+            <div class="product-grid">
+                <!-- Aiprilene Mesh Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/20c997/FFFFFF?text=Aiprilene+Mesh" alt="Aiprilene Mesh">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aiprilene Mesh</h3>
+                            <p>Polypropylene Mesh for Hernia Repair</p>
+                        </div>
+                        <a href="aiprilene-mesh.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Aipriseal Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/fd7e14/FFFFFF?text=Aipriseal" alt="Aipriseal">
+                    <div class="card-content">
+                        <div>
+                            <h3>Aipriseal</h3>
+                            <p>Sterile Bonewax for Hemostasis</p>
+                        </div>
+                        <a href="aipriseal.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Surgical Kits Card -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/600x400/0d6efd/FFFFFF?text=Surgical+Kits" alt="Surgical Kits">
+                    <div class="card-content">
+                        <div>
+                            <h3>Surgical Kits</h3>
+                            <p>Convenient Kits for Various Procedures</p>
+                        </div>
+                        <a href="surgical-kits.html" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
