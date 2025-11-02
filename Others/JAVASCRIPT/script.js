@@ -61,20 +61,19 @@ function initNavigation() {
         }
     });
     
-    // Header scroll effect
+    // Header scroll effect (guard for missing header)
     window.addEventListener('scroll', function() {
         const header = document.getElementById('header');
+        if (!header) return;
         if (window.scrollY > 100) {
             header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
             header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            
             if (document.documentElement.getAttribute('data-theme') === 'dark') {
                 header.style.backgroundColor = 'rgba(30, 41, 59, 0.95)';
             }
         } else {
             header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.07)';
             header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-            
             if (document.documentElement.getAttribute('data-theme') === 'dark') {
                 header.style.backgroundColor = 'rgba(30, 41, 59, 0.9)';
             }
@@ -237,10 +236,11 @@ function initModal() {
             const formData = new FormData(inquiryForm);
             const name = formData.get('name');
             const email = formData.get('email');
+            const phone = formData.get('phone');
             const message = formData.get('message');
             
             // In a real application, you would send this data to a server
-            console.log('Inquiry Form Submission:', { name, email, message });
+            console.log('Inquiry Form Submission:', { name, email, phone, message });
             
             // Show success message
             alert('Thank you for your inquiry! We will get back to you soon.');
@@ -294,18 +294,28 @@ function initProductDetailsButtons() {
     const detailsButtons = document.querySelectorAll('.details-btn');
     
     detailsButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const productCard = this.closest('.item');
-            const productTitle = productCard.querySelector('h3').textContent;
+        button.addEventListener('click', function(e) {
+            // If clicked element is a link or inside a link, allow normal navigation
+            const clickedLink = e.target.closest('a[href]');
+            if (clickedLink) {
+                // Let the link handle navigation naturally
+                return;
+            }
             
-            // In a real application, this would navigate to a product details page
-            // For now, we'll show an alert and scroll to the contact section
-            alert(`More details about ${productTitle} will be shown here. For now, please contact us for specific product information.`);
+            // If button contains a link, navigate to it
+            const innerLink = this.querySelector('a[href]');
+            if (innerLink) {
+                e.preventDefault();
+                window.location.href = innerLink.href;
+                return;
+            }
             
-            // Scroll to contact section
-            document.getElementById('contact').scrollIntoView({
-                behavior: 'smooth'
-            });
+            // Fallback behavior only when no link present
+            const contact = document.getElementById('contact');
+            if (contact) {
+                e.preventDefault();
+                contact.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 }
@@ -334,7 +344,8 @@ function initSmoothScrolling() {
                 e.preventDefault();
                 
                 // Calculate offset for fixed header
-                const headerHeight = document.getElementById('header').offsetHeight;
+                const headerEl = document.querySelector('.medical-navbar');
+                const headerHeight = headerEl ? headerEl.offsetHeight : 0;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 
                 window.scrollTo({
@@ -782,23 +793,33 @@ function initScrollAnimations() {
 //     }
 // }
 
-// 7. PRODUCT DETAILS BUTTONS
+// 7. PRODUCT DETAILS BUTTONS (duplicate - updated to allow navigation)
 function initProductDetailsButtons() {
     const detailsButtons = document.querySelectorAll('.details-btn');
     
     detailsButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const productCard = this.closest('.item');
-            const productTitle = productCard.querySelector('h3').textContent;
+        button.addEventListener('click', function(e) {
+            // If clicked element is a link or inside a link, allow normal navigation
+            const clickedLink = e.target.closest('a[href]');
+            if (clickedLink) {
+                // Let the link handle navigation naturally
+                return;
+            }
             
-            // In a real application, this would navigate to a product details page
-            // For now, we'll show an alert and scroll to the contact section
-            alert(`More details about ${productTitle} will be shown here. For now, please contact us for specific product information.`);
+            // If button contains a link, navigate to it
+            const innerLink = this.querySelector('a[href]');
+            if (innerLink) {
+                e.preventDefault();
+                window.location.href = innerLink.href;
+                return;
+            }
             
-            // Scroll to contact section
-            document.getElementById('contact').scrollIntoView({
-                behavior: 'smooth'
-            });
+            // Fallback behavior only when no link present
+            const contact = document.getElementById('contact');
+            if (contact) {
+                e.preventDefault();
+                contact.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 }
@@ -827,7 +848,8 @@ function initSmoothScrolling() {
                 e.preventDefault();
                 
                 // Calculate offset for fixed header
-                const headerHeight = document.getElementById('header').offsetHeight;
+                const headerEl = document.querySelector('.medical-navbar');
+                const headerHeight = headerEl ? headerEl.offsetHeight : 0;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 
                 window.scrollTo({
@@ -1016,6 +1038,7 @@ function initModal() {
             // Get form data
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
             // Create inquiry object
@@ -1024,6 +1047,7 @@ function initModal() {
                 name: name,
                 email: email,
                 message: message,
+                phone: phone,
                 timestamp: new Date().toLocaleString('en-US'),
                 date: new Date().toISOString()
             };

@@ -57,7 +57,7 @@
                     <div class="spec-item"><span class="spec-label">Coating</span><span>Polycaprolactone & Calcium Stearate</span></div>
                     <div class="spec-item"><span class="spec-label">Color</span><span>Violet</span></div>
                     <div class="spec-item"><span class="spec-label">Wound Support</span><span>28 to 30 days</span></div>
-                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Completely in 70 to 90 days via hydrolysis</span></div>
+                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Completes in 70 to 90 days via hydrolysis</span></div>
                     <div class="spec-item"><span class="spec-label">Tensile Strength</span><span>75% retained for 14 days</span></div>
                     <div class="spec-item"><span class="spec-label">Sterilization</span><span>Ethylene Oxide (EO)</span></div>
                     <div class="spec-item"><span class="spec-label">Shelf Life</span><span>5 Years</span></div>
@@ -83,80 +83,14 @@
         </div>
     </main>
 
-    <footer class="contact-section">
-        <div class="container">
-            <div class="contact-card">
-                <h3>Get in Touch With Us</h3>
-                <div class="contact-info-grid">
-                    <div class="info-item"><i class="fas fa-phone"></i><h4>Phone Number</h4><p>+91 79845 32859</p></div>
-                    <div class="info-item"><i class="fas fa-envelope"></i><h4>Email Address</h4><p>info@aiprilife.com</p></div>
-                </div>
-                <div class="contact-actions">
-                    <a href="https://wa.me/917984532859" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-                    <a href="tel:+917984532859" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    
     <script>
         // Same slider script as Aicryl page
         document.addEventListener('DOMContentLoaded', function () { const track = document.querySelector('.slider-track'); const slides = Array.from(track.children); const nextButton = document.querySelector('.next-btn'); const prevButton = document.querySelector('.prev-btn'); const slideWidth = slides[0].getBoundingClientRect().width; let currentIndex = 0; const updateSlidePosition = () => { track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)'; }; nextButton.addEventListener('click', () => { currentIndex++; if (currentIndex > slides.length - 1) { currentIndex = 0; } updateSlidePosition(); }); prevButton.addEventListener('click', () => { currentIndex--; if (currentIndex < 0) { currentIndex = slides.length - 1; } updateSlidePosition(); }); window.addEventListener('resize', () => { const newSlideWidth = slides[0].getBoundingClientRect().width; track.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)'; }); });
     </script>
 
     
-     <!-- 7. FOOTER -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#company">Company</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#quality">Quality</a></li>
-                        <li><a href="#core-values">Core Values</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Products</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="/Others/Other_Pages/Aicryl.html">Aicryl™ Sutures</a></li>
-                        <li><a href="/Others/Other_Pages/aithilon.html">Aithilon™ Sutures</a></li>
-                        <li><a href="/Others/Other_Pages/aiprilene.html">Aiprilene™ Sutures</a></li>
-                        <li><a href="/Others/Other_Pages/monopril.html">MonoPril™ Sutures</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Aipri Lifesciences LLP</h3>
-                    <p><i class="fas fa-phone"></i> +91 79845 32859</p>
-                    <p><i class="fas fa-envelope"></i> info@aiprilife.com</p>
-                    <div class="social-links">
-                        <a href="https://wa.me/917984532859" class="social-btn btn-whatsapp-footer">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                        <a href="tel:+917984532859" class="social-btn btn-call-footer" style="background-color: #0A66C2;">
-                            <i class="fas fa-phone"></i> Call Now
-                        </a>
-                        <a href="https://www.linkedin.com/company/aipri-lifesciences-llp/" class="social-btn btn-linkedin">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Business Info</h3>
-                    <p><strong>GST No:</strong> 24ACIFA722431ZF</p>
-                    <p><strong>CIN:</strong> ACL-9294</p>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; <span id="currentYear"></span> Aipri Lifesciences LLP. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <link rel="stylesheet" href="/Others/style/otherstyle.css">
-
+   
 
 </body>
 </html>
