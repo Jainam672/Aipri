@@ -1,21 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aicryl Rapid - Product Details | Aipri Lifesciences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary-blue: #244F71; --secondary-blue: #1e40af; --light-blue-bg: #eaf2f8; --text-dark: #212529; --text-light: #f8f9fa; --text-muted: #6c757d; --border-color: #dee2e6; --card-bg: #ffffff; --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07); --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); --transition: all 0.3s ease-in-out; }
-        * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--card-bg); color: var(--text-dark); line-height: 1.7; } .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; } .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; text-align: center; } .product-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 10px; } .product-header p { font-size: 1.25rem; opacity: 0.9; } .product-main { padding: 60px 0; } .section { margin-bottom: 50px; } .section-title { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-blue); display: inline-block; } .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; } .product-info h3 { font-size: 1.5rem; color: var(--secondary-blue); margin-bottom: 15px; } .product-info ul { list-style: none; padding-left: 0; } .product-info ul li { margin-bottom: 10px; display: flex; align-items: flex-start; } .product-info ul li i { color: var(--primary-blue); margin-right: 10px; margin-top: 5px; } .slider-container { position: relative; width: 100%; max-width: 600px; margin: auto; overflow: hidden; border-radius: 15px; box-shadow: var(--shadow-lg); } .slider-track { display: flex; transition: transform 0.5s ease-in-out; } .slide { min-width: 100%; box-sizing: border-box; } .slide img { width: 100%; display: block; } .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; z-index: 100; font-size: 1.5rem; width: 50px; height: 50px; } .slider-btn:hover { background-color: rgba(0, 0, 0, 0.8); } .prev-btn { left: 10px; } .next-btn { right: 10px; } .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; background-color: var(--light-blue-bg); padding: 30px; border-radius: 15px; } .spec-item { background-color: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: var(--shadow-md); } .spec-item .spec-label { font-weight: 600; color: var(--primary-blue); display: block; margin-bottom: 5px; } .table-container { overflow-x: auto; } .variants-table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: var(--shadow-md); } .variants-table th, .variants-table td { padding: 12px 15px; text-align: left; border: 1px solid var(--border-color); } .variants-table thead th { background-color: var(--primary-blue); color: white; font-size: 0.9rem; text-transform: uppercase; } .variants-table tbody tr:nth-child(even) { background-color: var(--light-blue-bg); } .variants-table tbody tr:hover { background-color: #d0e0eb; } .contact-section { background: var(--light-blue-bg); padding: 80px 0; text-align: center; } .contact-card { background-color: var(--card-bg); color: var(--text-dark); border-radius: 20px; padding: 40px; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-lg); } .contact-card h3 { color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 30px; } .contact-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; } .info-item { padding: 25px; border-radius: 15px; border: 1px solid var(--border-color); } .info-item i { font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 15px; } .info-item h4 { font-size: 1.1rem; margin-bottom: 5px; } .info-item p { color: var(--text-muted); } .contact-actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; } .contact-actions a { text-decoration: none; color: white; padding: 12px 25px; border-radius: 50px; font-weight: 600; transition: var(--transition); } .btn-whatsapp { background-color: #25D366; } .btn-call { background-color: var(--secondary-blue); } .contact-actions a:hover { transform: scale(1.05); } @media (max-width: 768px) { .contact-info-grid { grid-template-columns: 1fr; } }
+        :root {
+            --primary-blue: #244F71;
+            --secondary-blue: #1e40af;
+            --light-blue-bg: #eaf2f8;
+            --text-dark: #212529;
+            --text-light: #f8f9fa;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+            --card-bg: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--card-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--text-light);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .product-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 10px;
+        }
+
+        .product-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .product-main {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-bottom: 15px;
+        }
+
+        .product-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-info ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .product-info ul li i {
+            color: var(--primary-blue);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 100;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .slider-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            background-color: var(--light-blue-bg);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .spec-item {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .spec-item .spec-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .variants-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .variants-table th,
+        .variants-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        .variants-table thead th {
+            background-color: var(--primary-blue);
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .variants-table tbody tr:nth-child(even) {
+            background-color: var(--light-blue-bg);
+        }
+
+        .variants-table tbody tr:hover {
+            background-color: #d0e0eb;
+        }
+
+    
+
+        @media (max-width: 768px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header class="product-header">
         <div class="container">
             <h1>Aicryl Rapid</h1>
-            <p>Braided & Coated Polyglactin 910 (Fast Absorbable) Absorbable Surgical Suture U.S.P.</p>
+            <p>Braided & Coated Polyglactin 910 Fast Absorbable Surgical
+                Suture U.S.P.</p>
         </div>
     </header>
 
@@ -26,26 +245,61 @@
                     <!-- Image Slider -->
                     <div class="slider-container">
                         <div class="slider-track">
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/f59e0b/FFFFFF?text=Aicryl+Rapid+View+1" alt="Aicryl Rapid Suture - View 1"></div>
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/f59e0b/FFFFFF?text=Aicryl+Rapid+Packaging" alt="Aicryl Rapid Suture - Packaging"></div>
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/f59e0b/FFFFFF?text=Aicryl+Rapid+Application" alt="Aicryl Rapid Suture - Application"></div>
+                            <div class="slide"><img
+                                    src="/Others/Media/Aicryl Rapid/20250917_221414.jpg"
+                                    alt="Aicryl Rapid Suture - View 1"></div>
+                            <div class="slide"><img
+                                    src="/Others/Media/Aicryl Rapid/20250917_221420.jpg"
+                                    alt="Aicryl Rapid Suture - Packaging"></div>
+                            <div class="slide"><img
+                                    src="/Others/Media/Aicryl Rapid/20250917_221456.jpg"
+                                    alt="Aicryl Rapid Suture - Application"></div>
                         </div>
                         <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
                     </div>
-                    
+
                     <div class="product-info">
                         <h2 class="section-title">Product Overview</h2>
-                        <p>Aicryl Rapid – Braided & Coated Polyglactin 910 Suture is a synthetic absorbable sterile surgical suture composed of a low molecular weight copolymer made from 90% glycolide and 10% L-lactide. In-house needle manufacturing provides you the better needles with optimum sharpness which finally delivers smooth riding on tissues during suturing.</p>
-                        <h3>Key Indications:</h3>
+                        <p>Aicryl Rapid – Braided & Coated Polyglactin 910
+                            Suture is a synthetic absorbable sterile
+                            surgical suture composed of a low molecular
+                            weight copolymer made from 90% glycolide and 10%
+                            L-lactide. In-house needle manufacturing
+                            provides you the better needles with optimum
+                            sharpness which finally delivers smooth riding
+                            on tissues during suturing.</p>
+
+                        <h3>Indications</h3>
+                        <p>Aicryl Rapid is indicated only for use in
+                            superficial soft tissue approximation of the
+                            skin and mucosa, where only short term wound
+                            support (7-10 days) is required.</p>
+
+                        <h3>Product Characteristics</h3>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i>Aicryl Rapid is indicated only for use in superficial soft tissue approximation of the skin and mucosa, where only short term wound support (7-10 days) is required.</li>
-                            <li><i class="fas fa-check-circle"></i>Secure Knot holding capacity</li>
-                            <li><i class="fas fa-check-circle"></i>Smooth surface provides easy tissue passage</li>
-                            <li><i class="fas fa-check-circle"></i>Episiotomy repair</li>
-                            <li><i class="fas fa-check-circle"></i>Fast healing tissue repair</li>
-                            <li><i class="fas fa-check-circle"></i>Uterus approximation</li>
-                            <li><i class="fas fa-check-circle"></i>Soft tissue approximation</li>
+                            <li><i class="fas fa-check-circle"></i>Secure
+                                Knot holding capacity</li>
+                            <li><i class="fas fa-check-circle"></i>Smooth
+                                surface provides easy tissue passage</li>
+                            <li><i class="fas fa-check-circle"></i>Excellent
+                                tensile strength</li>
+                            <li><i class="fas fa-check-circle"></i>Excellent
+                                knot tying</li>
+                            <li><i class="fas fa-check-circle"></i>Minimum
+                                tissue reaction</li>
+                        </ul>
+
+                        <h3>Best Used For</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Episiotomy
+                                repair</li>
+                            <li><i class="fas fa-check-circle"></i>Fast
+                                healing tissue repair</li>
+                            <li><i class="fas fa-check-circle"></i>Uterus
+                                approximation</li>
+                            <li><i class="fas fa-check-circle"></i>Soft
+                                tissue approximation</li>
                         </ul>
                     </div>
                 </div>
@@ -54,18 +308,35 @@
             <section class="section">
                 <h2 class="section-title">Additional Information</h2>
                 <div class="specs-grid">
-                    <div class="spec-item"><span class="spec-label">Characteristics</span><span>Synthetic Absorbable Surgical Suture</span></div>
+                    <div class="spec-item"><span class="spec-label">Characteristics</span><span>Synthetic
+                            Absorbable Surgical Suture</span></div>
                     <div class="spec-item"><span class="spec-label">Type</span><span>Braided</span></div>
-                    <div class="spec-item"><span class="spec-label">Material</span><span>Polyglycolide (90%)- co-lactide(10%) synthetic absorbable braided suture</span></div>
-                    <div class="spec-item"><span class="spec-label">Coating</span><span>Poly (glycolide-ce-L-lactide) & calcium stearate</span></div>
+                    <div class="spec-item"><span class="spec-label">Material</span><span>Polyglycolide
+                            (90%)- co-lactide(10%) synthetic absorbable
+                            braided suture</span></div>
+                    <div class="spec-item"><span class="spec-label">Coating</span><span>Poly
+                            (glycolide-ce-L-lactide) & calcium
+                            stearate</span></div>
                     <div class="spec-item"><span class="spec-label">Color</span><span>Undyed</span></div>
-                    <div class="spec-item"><span class="spec-label">Support</span><span>7 to 10 days</span></div>
-                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Absorption takes place through hydrolysis completely in 40 to 45 days</span></div>
-                    <div class="spec-item"><span class="spec-label">Strength</span><span>75% tensile strength is retained for 3 days and 50% till 5 days.</span></div>
-                    <div class="spec-item"><span class="spec-label">Sterilization</span><span>EO (Ethylene Oxide)</span></div>
-                    <div class="spec-item"><span class="spec-label">Shelf Life</span><span>3 Years</span></div>
-                    <div class="spec-item"><span class="spec-label">Product Characteristics</span><span>Excellent tensile strength, Excellent knot tying, Minimum tissue reaction</span></div>
-                    <div class="spec-item"><span class="spec-label">Packaging</span><span>In aluminium foil packages with/without needle</span></div>
+                    <div class="spec-item"><span class="spec-label">Support</span><span>7 to 10
+                            days</span></div>
+                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Absorption
+                            takes place through hydrolysis completely in 40
+                            to 45 days</span></div>
+                    <div class="spec-item"><span class="spec-label">Strength</span><span>75%
+                            tensile strength is retained for 3 days and 50%
+                            till 5 days.</span></div>
+                    <div class="spec-item"><span class="spec-label">Sterilization</span><span>EO
+                            (Ethylene Oxide)</span></div>
+                    <div class="spec-item"><span class="spec-label">Shelf
+                            Life</span><span>3 Years</span></div>
+                    <div class="spec-item"><span class="spec-label">Product
+                            Characteristics</span><span>Excellent tensile
+                            strength, Excellent knot tying, Minimum tissue
+                            reaction</span></div>
+                    <div class="spec-item"><span class="spec-label">Packaging</span><span>In
+                            aluminium foil packages with/without
+                            needle</span></div>
                 </div>
             </section>
 
@@ -73,19 +344,141 @@
                 <h2 class="section-title">Available Product Variants</h2>
                 <div class="table-container">
                     <table class="variants-table">
-                        <thead><tr><th>Code</th><th>USP</th><th>Length</th><th>Curvature</th><th>Body</th><th>Length</th><th>Curvature 2</th><th>Body 2</th><th>Length 2</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Suture USP</th>
+                                <th>Length</th>
+                                <th>Needle 1 Curvature</th>
+                                <th>Needle 1 Body</th>
+                                <th>Needle 1 Length</th>
+                                <th>Needle 2 Curvature</th>
+                                <th>Needle 2 Body</th>
+                                <th>Needle 2 Length</th>
+                            </tr>
+                        </thead>
                         <tbody>
-                            <tr><td>12H75CY20</td><td>5-0</td><td>75 cm</td><td>3/8 Circle</td><td>Cutting</td><td>20mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12F75DZ22</td><td>3-0</td><td>75 cm</td><td>1/2 Circle</td><td>Round Body</td><td>22mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12E75DZ22</td><td>2-0</td><td>75 cm</td><td>1/2 Circle</td><td>Round Body</td><td>22mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12G75CY24</td><td>4-0</td><td>75 cm</td><td>3/8 Circle</td><td>Cutting</td><td>24mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12E75CY19</td><td>2-0</td><td>75 cm</td><td>3/8 Circle</td><td>Cutting</td><td>19mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12F75CY16</td><td>3-0</td><td>75 cm</td><td>3/8 Circle</td><td>Cutting</td><td>16mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12G75CY16</td><td>4-0</td><td>75 cm</td><td>3/8 Circle</td><td>Cutting</td><td>16mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12H45CY12</td><td>5-0</td><td>45cm</td><td>3/8 Circle</td><td>Cutting</td><td>12mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12G75AY61</td><td>4-0</td><td>75 cm</td><td>Straight</td><td>Cutting</td><td>61mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12G75CY13.4</td><td>4-0</td><td>75 cm</td><td>3/8 Circle</td><td>Cutting</td><td>13.4mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>12G75CY19</td><td>4-0</td><td>75 cm</td><td>3/8 Circle</td><td>Cutting</td><td>19mm</td><td></td><td></td><td></td></tr>
+                            <tr>
+                                <td>12H75CY20</td>
+                                <td>5-0</td>
+                                <td>75 cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>20mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12F75DZ22</td>
+                                <td>3-0</td>
+                                <td>75 cm</td>
+                                <td>1/2 Circle</td>
+                                <td>Round Body</td>
+                                <td>22mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12E75DZ22</td>
+                                <td>2-0</td>
+                                <td>75 cm</td>
+                                <td>1/2 Circle</td>
+                                <td>Round Body</td>
+                                <td>22mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12G75CY24</td>
+                                <td>4-0</td>
+                                <td>75 cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>24mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12E75CY19</td>
+                                <td>2-0</td>
+                                <td>75 cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>19mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12F75CY16</td>
+                                <td>3-0</td>
+                                <td>75 cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>16mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12G75CY16</td>
+                                <td>4-0</td>
+                                <td>75 cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>16mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12H45CY12</td>
+                                <td>5-0</td>
+                                <td>45cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>12mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12G75AY61</td>
+                                <td>4-0</td>
+                                <td>75 cm</td>
+                                <td>Straight</td>
+                                <td>Cutting</td>
+                                <td>61mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12G75CY13.4</td>
+                                <td>4-0</td>
+                                <td>75 cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>13.4mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12G75CY19</td>
+                                <td>4-0</td>
+                                <td>75 cm</td>
+                                <td>3/8 Circle</td>
+                                <td>Cutting</td>
+                                <td>19mm</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -94,8 +487,41 @@
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () { const track = document.querySelector('.slider-track'); const slides = Array.from(track.children); const nextButton = document.querySelector('.next-btn'); const prevButton = document.querySelector('.prev-btn'); const slideWidth = slides[0].getBoundingClientRect().width; let currentIndex = 0; const updateSlidePosition = () => { track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)'; }; nextButton.addEventListener('click', () => { currentIndex++; if (currentIndex > slides.length - 1) { currentIndex = 0; } updateSlidePosition(); }); prevButton.addEventListener('click', () => { currentIndex--; if (currentIndex < 0) { currentIndex = slides.length - 1; } updateSlidePosition(); }); window.addEventListener('resize', () => { const newSlideWidth = slides[0].getBoundingClientRect().width; track.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)'; }); });
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.slider-track');
+            const slides = Array.from(track.children);
+            const nextButton = document.querySelector('.next-btn');
+            const prevButton = document.querySelector('.prev-btn');
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            let currentIndex = 0;
+
+            const updateSlidePosition = () => {
+                track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
+            };
+
+            nextButton.addEventListener('click', () => {
+                currentIndex++;
+                if (currentIndex > slides.length - 1) {
+                    currentIndex = 0;
+                }
+                updateSlidePosition();
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = slides.length - 1;
+                }
+                updateSlidePosition();
+            });
+
+            window.addEventListener('resize', () => {
+                const newSlideWidth = slides[0].getBoundingClientRect().width;
+                track.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)';
+            });
+        });
     </script>
 
 </body>
+
 </html>

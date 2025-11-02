@@ -21,8 +21,8 @@
         .section-title { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-blue); display: inline-block; }
 
         /* Product Overview Grid */
-        .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
-        .product-info h3 { font-size: 1.5rem; color: var(--secondary-blue); margin-bottom: 15px; }
+        .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: flex-start; }
+        .product-info h3 { font-size: 1.5rem; color: var(--secondary-blue); margin-top: 20px; margin-bottom: 15px; }
         .product-info ul { list-style: none; padding-left: 0; }
         .product-info ul li { margin-bottom: 10px; display: flex; align-items: flex-start; }
         .product-info ul li i { color: var(--primary-blue); margin-right: 10px; margin-top: 5px; }
@@ -39,32 +39,20 @@
         
         /* Additional Information and Specs */
         .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; background-color: var(--light-blue-bg); padding: 30px; border-radius: 15px; }
-        .spec-item { background-color: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: var(--shadow-md); }
+        .spec-item { background-color: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: var(--shadow-md); transition: transform 0.2s; }
+        .spec-item:hover { transform: translateY(-5px); }
         .spec-item .spec-label { font-weight: 600; color: var(--primary-blue); display: block; margin-bottom: 5px; }
         
         /* Variants Table */
-        .table-container { overflow-x: auto; }
-        .variants-table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: var(--shadow-md); }
-        .variants-table th, .variants-table td { padding: 12px 15px; text-align: left; border: 1px solid var(--border-color); }
-        .variants-table thead th { background-color: var(--primary-blue); color: white; font-size: 0.9rem; text-transform: uppercase; }
+        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; box-shadow: var(--shadow-md); }
+        .variants-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .variants-table th, .variants-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
         .variants-table tbody tr:nth-child(even) { background-color: var(--light-blue-bg); }
         .variants-table tbody tr:hover { background-color: #d0e0eb; }
+        .variants-table thead th { background-color: var(--primary-blue); color: white; font-size: 0.9rem; text-transform: uppercase; position: -webkit-sticky; position: sticky; top: 0; z-index: 10; }
+        .variants-table .type-header td { background-color: var(--secondary-blue); color: white; font-weight: bold; text-align: center; }
 
-        /* Contact Section */
-        .contact-section { background: var(--light-blue-bg); padding: 80px 0; text-align: center; }
-        .contact-card { background-color: var(--card-bg); color: var(--text-dark); border-radius: 20px; padding: 40px; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-lg); }
-        .contact-card h3 { color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 30px; }
-        .contact-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
-        .info-item { padding: 25px; border-radius: 15px; border: 1px solid var(--border-color); }
-        .info-item i { font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 15px; }
-        .info-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
-        .info-item p { color: var(--text-muted); }
-        .contact-actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .contact-actions a { text-decoration: none; color: white; padding: 12px 25px; border-radius: 50px; font-weight: 600; transition: var(--transition); }
-        .btn-whatsapp { background-color: #25D366; } .btn-call { background-color: var(--secondary-blue); }
-        .contact-actions a:hover { transform: scale(1.05); }
-
-        @media (max-width: 768px) { .contact-info-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .overview-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -72,7 +60,7 @@
     <header class="product-header">
         <div class="container">
             <h1>Aiprilene Mesh</h1>
-            <p>Monofilament Polypropylene Mesh (Undyed) Non-Absorbable Sterile Surgical Mesh</p>
+            <p>Monofilament Polypropylene Mesh (Undyed) Non Absorbable Sterile Surgical Mesh</p>
         </div>
     </header>
 
@@ -83,21 +71,27 @@
                     <!-- Image Slider -->
                     <div class="slider-container">
                         <div class="slider-track">
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/20c997/FFFFFF?text=Aiprilene+Mesh+View+1" alt="Aiprilene Mesh - View 1"></div>
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/20c997/FFFFFF?text=Mesh+Packaging" alt="Aiprilene Mesh - Packaging"></div>
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/20c997/FFFFFF?text=Hernia+Repair+Application" alt="Aiprilene Mesh - Application"></div>
+                            <div class="slide"><img src="https://i.imgur.com/vHctf0L.jpeg" alt="Aiprilene Mesh Product Information"></div>
+                            <div class="slide"><img src="https://i.imgur.com/6cE2zL4.jpeg" alt="Aiprilene Mesh Packaging Example"></div>
+                            <div class="slide"><img src="https://i.imgur.com/e5B0rN7.jpeg" alt="Aiprilene Mesh In Use"></div>
                         </div>
                         <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
                     </div>
-
+                    
                     <div class="product-info">
                         <h2 class="section-title">Product Overview</h2>
-                        <p>Aiprilene Mesh is constructed of knitted filaments of extruded polypropylene, identical to our Aiprilene Suture. This nonreactive material retains its strength indefinitely and provides bi-directional elasticity for hernia repair and other facial deficiencies.</p>
-                        <h3>Key Indications:</h3>
+                        <p>Polypropylene Mesh is constructed of knitted filaments of extruded polypropylene identical in composition to that used in Aiprilene Polypropylene Suture. This material, when used as a suture, has been reported to be nonreactive and to retain its strength indefinitely in clinical use. Polypropylene Mesh is knitted by a process which interlinks each fiber junction and which provides for elasticity in both directions. This construction permits the mesh to be cut into any desired shape or size without unraveling. This bi-directional elastic property allows adaptation to various stresses encountered in the body. In-house mesh manufacturing makes us unique and potential manufacturer. Aiprilene Mesh is our unique product and we are available with any type, any kind of modification.</p>
+                        
+                        <h3>Indications of Aiprelene Mesh</h3>
+                        <p>Polypropylene Mesh used for the hernia repair and other facial deficiencies that require the addition of a reinforcing or bridging material to obtain the desired surgical result.</p>
+                        
+                        <h3>Product Characteristics</h3>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i>Used for hernia repair (both open and laparoscopic) and other procedures that require a reinforcing or bridging material.</li>
-                            <li><i class="fas fa-check-circle"></i>Lightweight construction with macro-porous design for high visibility and colonization.</li>
+                            <li><i class="fas fa-check-circle"></i>Unilene Mesh Probably the best in kind</li>
+                            <li><i class="fas fa-check-circle"></i>An artificial wall which doesn't feel</li>
+                            <li><i class="fas fa-check-circle"></i>Latest technology with perfection provides ultra smooth surface results optimum healing</li>
+                            <li><i class="fas fa-check-circle"></i>Knitting is as per requirement of tissues results no discomfort after surgery.</li>
                         </ul>
                     </div>
                 </div>
@@ -106,12 +100,14 @@
             <section class="section">
                 <h2 class="section-title">Additional Information</h2>
                 <div class="specs-grid">
+                    <div class="spec-item"><span class="spec-label">Characteristics</span><span>Non - Absorbable</span></div>
                     <div class="spec-item"><span class="spec-label">Type</span><span>Knitted filaments of extruded polypropylene</span></div>
                     <div class="spec-item"><span class="spec-label">Material</span><span>Polypropylene</span></div>
                     <div class="spec-item"><span class="spec-label">Color</span><span>White (undyed)</span></div>
-                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Non-absorbable</span></div>
-                    <div class="spec-item"><span class="spec-label">Sterilization</span><span>Ethylene Oxide (EO)</span></div>
+                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Non - absorbable</span></div>
+                    <div class="spec-item"><span class="spec-label">Sterilization</span><span>EO (Ethylene Oxide)</span></div>
                     <div class="spec-item"><span class="spec-label">Shelf Life</span><span>5 Years</span></div>
+                    <div class="spec-item"><span class="spec-label">Product Characteristics</span><span>Light weight construction because of which less foreign mass in the body & flexible scar tissue. Macro porous for high visibility and colonization</span></div>
                 </div>
             </section>
 
@@ -119,13 +115,36 @@
                 <h2 class="section-title">Available Product Variants</h2>
                 <div class="table-container">
                     <table class="variants-table">
-                        <thead><tr><th>Code</th><th>Type</th><th>Dimension</th><th>Packing</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Type</th>
+                                <th>Dimension</th>
+                                <th>Packing</th>
+                            </tr>
+                        </thead>
                         <tbody>
-                            <tr><td>UM 0611</td><td>Regular</td><td>6cm X 11cm</td><td>6 units / Box</td></tr>
-                            <tr><td>UM 0815</td><td>Regular</td><td>8cm X 15cm</td><td>6 units / Box</td></tr>
-                            <tr><td>UM 1015</td><td>Regular</td><td>10cm X 15cm</td><td>3 units / Box</td></tr>
-                            <tr><td>UM 1515</td><td>Regular</td><td>15cm X 15cm</td><td>3 units / Box</td></tr>
-                            <tr><td>UM 1530</td><td>Regular</td><td>15cm X 30cm</td><td>1 unit / Box</td></tr>
+                            <tr class="type-header"><td colspan="4">Regular</td></tr>
+                            <tr><td>UM 0611</td><td>Regular</td><td>6cm X 11cm</td><td>6units / Box</td></tr>
+                            <tr><td>UM 0815</td><td>Regular</td><td>8cm X 15cm</td><td>6units / Box</td></tr>
+                            <tr><td>UM 1015</td><td>Regular</td><td>10cm X 15cm</td><td>3units / Box</td></tr>
+                            <tr><td>UM 1515</td><td>Regular</td><td>15cm X 15cm</td><td>3units / Box</td></tr>
+                            <tr><td>UM 1530</td><td>Regular</td><td>15cm X 30cm</td><td>1unit / Box</td></tr>
+                            <tr><td>UM 3030</td><td>Regular</td><td>30cm X 30cm</td><td>1unit / Box</td></tr>
+                            <tr class="type-header"><td colspan="4">Soft</td></tr>
+                            <tr><td>us 0611</td><td>Soft</td><td>6cm X 11cm</td><td>6units / Box</td></tr>
+                            <tr><td>us 0815</td><td>Soft</td><td>8cm X 15cm</td><td>6units / Box</td></tr>
+                            <tr><td>us 1015</td><td>Soft</td><td>10cm X 15cm</td><td>3units / Box</td></tr>
+                            <tr><td>us 1515</td><td>Soft</td><td>15cm X 15cm</td><td>3units / Box</td></tr>
+                            <tr><td>us 1530</td><td>Soft</td><td>15cm X 30cm</td><td>1unit / Box</td></tr>
+                            <tr><td>us 3030</td><td>Soft</td><td>30cm X 30cm</td><td>1unit / Box</td></tr>
+                            <tr class="type-header"><td colspan="4">Large Pores</td></tr>
+                            <tr><td>UL 0611</td><td>Large Pores</td><td>6cm X 11cm</td><td>6units / Box</td></tr>
+                            <tr><td>UL 0815</td><td>Large Pores</td><td>8cm X 15cm</td><td>6units / Box</td></tr>
+                            <tr><td>UL 1015</td><td>Large Pores</td><td>10cm X 15cm</td><td>3units / Box</td></tr>
+                            <tr><td>UL 1515</td><td>Large Pores</td><td>15cm X 15cm</td><td>3units / Box</td></tr>
+                            <tr><td>UL 1530</td><td>Large Pores</td><td>15cm X 30cm</td><td>1unit / Box</td></tr>
+                            <tr><td>UL 3030</td><td>Large Pores</td><td>30cm X 30cm</td><td>1unit / Box</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -135,11 +154,51 @@
 
     <script>
         // Same slider script as Aicryl page
-        document.addEventListener('DOMContentLoaded', function () { const track = document.querySelector('.slider-track'); const slides = Array.from(track.children); const nextButton = document.querySelector('.next-btn'); const prevButton = document.querySelector('.prev-btn'); const slideWidth = slides[0].getBoundingClientRect().width; let currentIndex = 0; const updateSlidePosition = () => { track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)'; }; nextButton.addEventListener('click', () => { currentIndex++; if (currentIndex > slides.length - 1) { currentIndex = 0; } updateSlidePosition(); }); prevButton.addEventListener('click', () => { currentIndex--; if (currentIndex < 0) { currentIndex = slides.length - 1; } updateSlidePosition(); }); window.addEventListener('resize', () => { const newSlideWidth = slides[0].getBoundingClientRect().width; track.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)'; }); });
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.slider-track');
+            if (track) {
+                const slides = Array.from(track.children);
+                const nextButton = document.querySelector('.next-btn');
+                const prevButton = document.querySelector('.prev-btn');
+                
+                if (slides.length > 0) {
+                    let slideWidth = slides[0].getBoundingClientRect().width;
+                    let currentIndex = 0;
+
+                    const updateSlidePosition = () => {
+                        if (track) {
+                           track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
+                        }
+                    };
+
+                    if (nextButton) {
+                        nextButton.addEventListener('click', () => {
+                            currentIndex++;
+                            if (currentIndex > slides.length - 1) {
+                                currentIndex = 0;
+                            }
+                            updateSlidePosition();
+                        });
+                    }
+
+                    if (prevButton) {
+                        prevButton.addEventListener('click', () => {
+                            currentIndex--;
+                            if (currentIndex < 0) {
+                                currentIndex = slides.length - 1;
+                            }
+                            updateSlidePosition();
+                        });
+                    }
+
+                    window.addEventListener('resize', () => {
+                        slideWidth = slides[0].getBoundingClientRect().width;
+                        updateSlidePosition();
+                    });
+                }
+            }
+        });
     </script>
-
-    
-
 
 </body>
 </html>

@@ -3,12 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aicryl PDS - Product Details | Aipri Lifesciences</title>
+    <title>Aicryl PDS - Absorbable Surgical Suture | Aipri Lifesciences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Same CSS as the Aicryl template */
+        /* Base and Typography Styles */
         :root { --primary-blue: #244F71; --secondary-blue: #1e40af; --light-blue-bg: #eaf2f8; --text-dark: #212529; --text-light: #f8f9fa; --text-muted: #6c757d; --border-color: #dee2e6; --card-bg: #ffffff; --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07); --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); --transition: all 0.3s ease-in-out; }
-        * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--card-bg); color: var(--text-dark); line-height: 1.7; } .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; } .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; text-align: center; } .product-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 10px; } .product-header p { font-size: 1.25rem; opacity: 0.9; } .product-main { padding: 60px 0; } .section { margin-bottom: 50px; } .section-title { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-blue); display: inline-block; } .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; } .product-info h3 { font-size: 1.5rem; color: var(--secondary-blue); margin-bottom: 15px; } .product-info ul { list-style: none; padding-left: 0; } .product-info ul li { margin-bottom: 10px; display: flex; align-items: flex-start; } .product-info ul li i { color: var(--primary-blue); margin-right: 10px; margin-top: 5px; } .slider-container { position: relative; width: 100%; max-width: 600px; margin: auto; overflow: hidden; border-radius: 15px; box-shadow: var(--shadow-lg); } .slider-track { display: flex; transition: transform 0.5s ease-in-out; } .slide { min-width: 100%; box-sizing: border-box; } .slide img { width: 100%; display: block; } .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; z-index: 100; font-size: 1.5rem; width: 50px; height: 50px; } .slider-btn:hover { background-color: rgba(0, 0, 0, 0.8); } .prev-btn { left: 10px; } .next-btn { right: 10px; } .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; background-color: var(--light-blue-bg); padding: 30px; border-radius: 15px; } .spec-item { background-color: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: var(--shadow-md); } .spec-item .spec-label { font-weight: 600; color: var(--primary-blue); display: block; margin-bottom: 5px; } .table-container { overflow-x: auto; } .variants-table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: var(--shadow-md); } .variants-table th, .variants-table td { padding: 12px 15px; text-align: left; border: 1px solid var(--border-color); } .variants-table thead th { background-color: var(--primary-blue); color: white; font-size: 0.9rem; text-transform: uppercase; } .variants-table tbody tr:nth-child(even) { background-color: var(--light-blue-bg); } .variants-table tbody tr:hover { background-color: #d0e0eb; } .contact-section { background: var(--light-blue-bg); padding: 80px 0; text-align: center; } .contact-card { background-color: var(--card-bg); color: var(--text-dark); border-radius: 20px; padding: 40px; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-lg); } .contact-card h3 { color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 30px; } .contact-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; } .info-item { padding: 25px; border-radius: 15px; border: 1px solid var(--border-color); } .info-item i { font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 15px; } .info-item h4 { font-size: 1.1rem; margin-bottom: 5px; } .info-item p { color: var(--text-muted); } .contact-actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; } .contact-actions a { text-decoration: none; color: white; padding: 12px 25px; border-radius: 50px; font-weight: 600; transition: var(--transition); } .btn-whatsapp { background-color: #25D366; } .btn-call { background-color: var(--secondary-blue); } .contact-actions a:hover { transform: scale(1.05); } @media (max-width: 768px) { .contact-info-grid { grid-template-columns: 1fr; } }
+        * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--card-bg); color: var(--text-dark); line-height: 1.7; } .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* Header Section */
+        .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; text-align: center; }
+        .product-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 10px; }
+        .product-header p { font-size: 1.25rem; opacity: 0.9; }
+
+        /* Main Content Styling */
+        .product-main { padding: 60px 0; }
+        .section { margin-bottom: 50px; }
+        .section-title { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-blue); display: inline-block; }
+
+        /* Product Overview Grid */
+        .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: flex-start; }
+        .product-info h3 { font-size: 1.5rem; color: var(--secondary-blue); margin-top: 20px; margin-bottom: 15px; }
+        .product-info ul { list-style: none; padding-left: 0; }
+        .product-info ul li { margin-bottom: 10px; display: flex; align-items: flex-start; }
+        .product-info ul li i { color: var(--primary-blue); margin-right: 10px; margin-top: 5px; }
+
+        /* Image Slider Styles */
+        .slider-container { position: relative; width: 100%; max-width: 600px; margin: auto; overflow: hidden; border-radius: 15px; box-shadow: var(--shadow-lg); }
+        .slider-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .slide { min-width: 100%; box-sizing: border-box; }
+        .slide img { width: 100%; display: block; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; z-index: 100; font-size: 1.5rem; width: 50px; height: 50px; }
+        .slider-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+        
+        /* Additional Information and Specs */
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; background-color: var(--light-blue-bg); padding: 30px; border-radius: 15px; }
+        .spec-item { background-color: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: var(--shadow-md); transition: transform 0.2s; }
+        .spec-item:hover { transform: translateY(-5px); }
+        .spec-item .spec-label { font-weight: 600; color: var(--primary-blue); display: block; margin-bottom: 5px; }
+        
+        /* Variants Table */
+        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; box-shadow: var(--shadow-md); }
+        .variants-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .variants-table th, .variants-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
+        .variants-table tbody tr:nth-child(even) { background-color: var(--light-blue-bg); }
+        .variants-table tbody tr:hover { background-color: #d0e0eb; }
+        
+        /* --- STICKY HEADER STYLES --- */
+        .variants-table thead th {
+            background-color: var(--primary-blue);
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            z-index: 10;
+        }
+        .variants-table thead tr:first-child th {
+            top: 0; /* Stick the first row to the top */
+        }
+        .variants-table thead tr:nth-child(2) th {
+            top: 45px; /* Stick the second row below the first. Adjust this value if needed. */
+        }
+        .variants-table th[colspan] { 
+            text-align: center; 
+            background-color: var(--secondary-blue); 
+        }
+
+        @media (max-width: 768px) { .overview-grid { grid-template-columns: 1fr; } .contact-info-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -27,22 +90,32 @@
                     <!-- Image Slider -->
                     <div class="slider-container">
                         <div class="slider-track">
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/198754/FFFFFF?text=Aicryl+PDS+View+1" alt="Aicryl PDS Suture - View 1"></div>
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/198754/FFFFFF?text=Aicryl+PDS+Packaging" alt="Aicryl PDS Suture - Packaging"></div>
-                            <div class="slide"><img src="https://via.placeholder.com/600x400/198754/FFFFFF?text=In+Use+Application" alt="Aicryl PDS Suture - Application"></div>
+                            <div class="slide"><img src="https://i.imgur.com/vHctf0L.jpeg" alt="Aicryl PDS Suture Product Information"></div>
+                            <div class="slide"><img src="https://i.imgur.com/6cE2zL4.jpeg" alt="Aicryl PDS Suture Packaging Example"></div>
+                            <div class="slide"><img src="https://i.imgur.com/e5B0rN7.jpeg" alt="Aicryl PDS Suture In Use"></div>
                         </div>
                         <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
                     </div>
-
+                    
                     <div class="product-info">
                         <h2 class="section-title">Product Overview</h2>
-                        <p>Aicryl PDS is a monofilament synthetic absorbable suture prepared from polyester poly (p-dioxanone). It is designed to provide extended wound support and is formulated to minimize variability in tensile strength and absorption.</p>
-                        <h3>Key Indications:</h3>
+                        <p>Aicryl PDS - Monofilament Polydioxanone Suture is prepared from the polyester, poly (p-dioxanone). In-house needle manufacturing provides you the better needles with optimum sharpness which finally delivers smooth riding on tissues during suturing.</p>
+                        
+                        <h3>Indications</h3>
+                        <p>Two important characteristics describe the in vivo performance of absorbable sutures: first tensile strength retention and second the absorption rate (loss of mass). Aicryl PDS synthetic absorbable suture has been formulated to minimize the variability of these characteristics and to provide wound support through an extended healing period.</p>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i>Required where delayed or extended wound support is critical.</li>
-                            <li><i class="fas fa-check-circle"></i>Its smooth surface provides no tissue drag during suturing.</li>
-                            <li><i class="fas fa-check-circle"></i>Best used for geriatric, obese, diabetic, and oncology patients.</li>
+                            <li><i class="fas fa-check-circle"></i>Where Delayed Wound Support required</li>
+                            <li><i class="fas fa-check-circle"></i>Surface as smooth as tissues: provides no tissue drag during suturing</li>
+                        </ul>
+
+                        <h3>Best Used For:</h3>
+                        <ul>
+                           <li><i class="fas fa-star"></i>Geriatric Surgeries</li>
+                           <li><i class="fas fa-star"></i>Surgeries on Obese Patient</li>
+                           <li><i class="fas fa-star"></i>Surgeries on Diabetic Patient</li>
+                           <li><i class="fas fa-star"></i>Oncology Patients</li>
+                           <li><i class="fas fa-star"></i>Surgeries on Patients have delayed healing strength</li>
                         </ul>
                     </div>
                 </div>
@@ -51,16 +124,18 @@
             <section class="section">
                 <h2 class="section-title">Additional Information</h2>
                 <div class="specs-grid">
+                    <div class="spec-item"><span class="spec-label">Characteristics</span><span>Synthetic Absorbable Surgical Suture</span></div>
                     <div class="spec-item"><span class="spec-label">Type</span><span>Monofilament</span></div>
                     <div class="spec-item"><span class="spec-label">Material</span><span>Polyester, poly-p-dioxanone</span></div>
                     <div class="spec-item"><span class="spec-label">Coating</span><span>None</span></div>
                     <div class="spec-item"><span class="spec-label">Color</span><span>Violet</span></div>
-                    <div class="spec-item"><span class="spec-label">Wound Support</span><span>35 to 45 days</span></div>
-                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Completely in 180 to 210 days via hydrolysis</span></div>
-                    <div class="spec-item"><span class="spec-label">Tensile Strength</span><span>50% retained for 30 days</span></div>
-                    <div class="spec-item"><span class="spec-label">Sterilization</span><span>Ethylene Oxide (EO)</span></div>
+                    <div class="spec-item"><span class="spec-label">Support</span><span>35 to 45 days</span></div>
+                    <div class="spec-item"><span class="spec-label">Absorption</span><span>Takes place through hydrolysis completely in 180 to 210 days</span></div>
+                    <div class="spec-item"><span class="spec-label">Strength</span><span>50% tensile strength is retained for 30 days</span></div>
+                    <div class="spec-item"><span class="spec-label">Sterilization</span><span>EO (Ethylene Oxide)</span></div>
                     <div class="spec-item"><span class="spec-label">Shelf Life</span><span>3 Years</span></div>
-                    <div class="spec-item"><span class="spec-label">Packaging</span><span>Aluminum foil packages</span></div>
+                    <div class="spec-item"><span class="spec-label">Product Characteristics</span><span>Excellent tensile strength, Excellent knot tying, Minimum tissue reaction</span></div>
+                    <div class="spec-item"><span class="spec-label">Packaging</span><span>In aluminium foil packages with/without needle</span></div>
                 </div>
             </section>
 
@@ -68,13 +143,100 @@
                 <h2 class="section-title">Available Product Variants</h2>
                 <div class="table-container">
                     <table class="variants-table">
-                        <thead><tr><th>Code</th><th>USP</th><th>Length</th><th>Needle Curvature</th><th>Needle Body</th><th>Needle Length</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Code</th>
+                                <th colspan="2">Suture</th>
+                                <th colspan="3">Needle 1</th>
+                                <th colspan="3">Needle 2</th>
+                            </tr>
+                            <tr>
+                                <th>USP</th>
+                                <th>Length</th>
+                                <th>Curvature</th>
+                                <th>Body</th>
+                                <th>Length</th>
+                                <th>Curvature</th>
+                                <th>Body</th>
+                                <th>Length</th>
+                            </tr>
+                        </thead>
                         <tbody>
-                            <tr><td>9E75DZ26</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td></tr>
-                            <tr><td>9E75DX26</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Reverse Cutting</td><td>26mm</td></tr>
-                            <tr><td>9E75DZ36</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>36mm</td></tr>
-                            <tr><td>9D75DX36</td><td>0</td><td>75cm</td><td>1/2 Circle</td><td>Reverse Cutting</td><td>36mm</td></tr>
-                            <tr><td>9D90DZ40</td><td>0</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td></tr>
+                            <!-- Page 18 Data -->
+                            <tr><td>9E75DZ26</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E75DX36</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Reverse Cutting</td><td>36mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D75DX36</td><td>0</td><td>75cm</td><td>1/2 Circle</td><td>Reverse Cutting</td><td>36mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D90DZ40</td><td>0</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D90DX40</td><td>0</td><td>90cm</td><td>1/2 Circle</td><td>Reverse Cutting</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D90DZ48</td><td>0</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>48mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D150DZ48</td><td>0</td><td>150cm</td><td>1/2 Circle</td><td>Round Body</td><td>48mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C90DX40</td><td>1</td><td>90cm</td><td>1/2 Circle</td><td>Reverse Cutting</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C150DZ48</td><td>1</td><td>150cm</td><td>1/2 Circle</td><td>Round Body</td><td>48mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9F30DZ26</td><td>3-0</td><td>30cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D130DZ48LP</td><td>0 (Loop)</td><td>130cm</td><td>1/2 Circle</td><td>Round Body</td><td>48mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D130CY48LP</td><td>0 (Loop)</td><td>130cm</td><td>3/8 Circle</td><td>Cutting</td><td>48mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C130DZ48LP</td><td>1 (Loop)</td><td>130cm</td><td>1/2 Circle</td><td>Round Body</td><td>48mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E70CY37</td><td>2-0</td><td>70cm</td><td>3/8 Circle</td><td>Cutting</td><td>37mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9F70DZ26</td><td>3-0</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D50ELP</td><td>0</td><td>50cm</td><td colspan="3">Endoloop</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E50ELP</td><td>2-0</td><td>50cm</td><td colspan="3">Endoloop</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C70DZ40</td><td>1</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E70DZ26</td><td>2-0</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E70DZ36</td><td>2-0</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>36mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D75DZ36</td><td>0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>36mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C75DZ19</td><td>4-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>19 mm</td><td></td><td></td><td></td></tr>
+                            <!-- Page 19 Data -->
+                            <tr><td>9H75DZ19</td><td>5-0</td><td>75cm</td><td>1/2</td><td>Circle Round Body</td><td>19 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C150DZ40LP</td><td>1 (Loop)</td><td>150cm</td><td>1/2</td><td>Circle Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C75DZ26</td><td>1</td><td>75cm</td><td>1/2</td><td>Circle Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C150DZ38LP</td><td>1 (Loop)</td><td>150cm</td><td>1/2</td><td>Circle Round Body</td><td>38mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E75DY26</td><td>2-0</td><td>75cm</td><td>1/2</td><td>Circle Cutting</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D75DY36</td><td>0</td><td>75cm</td><td>1/2</td><td>Circle Cutting</td><td>36mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D76DZ25</td><td>1-0</td><td>76cm</td><td>1/2</td><td>Circle Round Body</td><td>25 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C90DZ45DA</td><td>1</td><td>90cm</td><td>1/2</td><td>Circle Round Body</td><td>45 mm</td><td>1/2 Circle</td><td>Round Body</td><td>45 mm</td></tr>
+                            <tr><td>9E90DZ30</td><td>2-0</td><td>90cm</td><td>1/2</td><td>Circle Round Body</td><td>30mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9F76DZ20</td><td>3-0</td><td>76cm</td><td>1/2</td><td>Circle Round Body</td><td>20mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9G76DZ20</td><td>4-0</td><td>76cm</td><td>1/2</td><td>Circle Round Body</td><td>20mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9G76CY19</td><td>4-0</td><td>76cm</td><td>3/8</td><td>Circle Cutting</td><td>19 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9G76CX19</td><td>4-0</td><td>76cm</td><td>3/8</td><td>Circle Reverse Cutting</td><td>19 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9H76DZ16</td><td>5-0</td><td>76cm</td><td>1/2</td><td>Circle Round Body</td><td>16mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9H45CZ16</td><td>6-0</td><td>45cm</td><td>3/8</td><td>Circle Round Body</td><td>16mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9I45CZ13</td><td>6-0</td><td>45cm</td><td>3/8</td><td>Circle Round Body</td><td>13 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C90CZ45DA</td><td>1</td><td>90cm</td><td>3/8</td><td>Circle Round Body</td><td>45 mm</td><td>3/8 Circle</td><td>Round Body</td><td>45 mm</td></tr>
+                            <tr><td>9E250</td><td>2-0</td><td>250cm</td><td colspan="3">Without Needle</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E75DZ26</td><td>2-0</td><td>75cm</td><td>1/2</td><td>Circle Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9F75DZ21</td><td>3-0</td><td>75cm</td><td>1/2</td><td>Circle Round Body</td><td>21 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9G75DZ19</td><td>4-0</td><td>75cm</td><td>1/2</td><td>Circle Round Body</td><td>19 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9G90DZ17DA</td><td>4-0</td><td>90cm</td><td>1/2</td><td>Circle Round Body</td><td>17mm</td><td>1/2 Circle</td><td>Round Body</td><td>17 mm</td></tr>
+                            <tr><td>9G90DZ22DA</td><td>4-0</td><td>90cm</td><td>1/2</td><td>Circle Round Body</td><td>22mm</td><td>1/2 Circle</td><td>Round Body</td><td>22 mm</td></tr>
+                            <tr><td>9H75DZ18</td><td>5-0</td><td>75cm</td><td>1/2</td><td>Circle Round Body</td><td>18mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9H75DZ17DA</td><td>5-0</td><td>75cm</td><td>1/2</td><td>Circle Round Body</td><td>17mm</td><td>1/2 Circle</td><td>Round Body</td><td>17 mm</td></tr>
+                            <!-- Page 20 Data -->
+                            <tr><td>9F75CY20</td><td>3-0</td><td>75cm</td><td>3/8 Circle</td><td>Cutting</td><td>20mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D90DZ48</td><td>0</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>48mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C75DZ26</td><td>1</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C150DZ48LP</td><td>1 (Loop)</td><td>150cm</td><td>1/2 Circle</td><td>Round Body</td><td>48 mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9B75DY40</td><td>2</td><td>75cm</td><td>1/2 Circle</td><td>Cutting</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9F70DZ22DA</td><td>3-0</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>22 mm</td><td>1/2 Circle</td><td>Round Body</td><td>22 mm</td></tr>
+                            <tr><td>9F70DZ26DA</td><td>3-0</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td></tr>
+                            <tr><td>9H90CZ18DA</td><td>5-0</td><td>90cm</td><td>3/8 Circle</td><td>Round Body</td><td>18mm</td><td>3/8 Circle</td><td>Round Body</td><td>18mm</td></tr>
+                            <tr><td>9G70DZ18.5D</td><td>4-0</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>18.5 mm</td><td>1/2 Circle</td><td>Round Body</td><td>18.5 mm</td></tr>
+                            <tr><td>9G70DZ22DA</td><td>4-0</td><td>70cm</td><td>1/2 Circle</td><td>Round Body</td><td>22 mm</td><td>1/2 Circle</td><td>Round Body</td><td>22 mm</td></tr>
+                            <tr><td>9G90DZ26DA</td><td>4-0</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td></tr>
+                            <tr><td>9C150DZ40LP</td><td>1 (Loop)</td><td>150cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D90DZ36</td><td>0</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>36mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9D90DZ40</td><td>0</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C75DZ26</td><td>1</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C90DZ36</td><td>1</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>36mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9C90DZ40</td><td>1</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9B90DZ40</td><td>2</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E75DZ26</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9E75DZ30</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>30mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9F75DZ26</td><td>3-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9F75DZ30</td><td>3-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>30mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9G75DZ26</td><td>4-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9G75DZ30</td><td>4-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>30mm</td><td></td><td></td><td></td></tr>
+                            <tr><td>9H75DZ17</td><td>5-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>17mm</td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -82,28 +244,52 @@
         </div>
     </main>
 
-    <footer class="contact-section">
-        <div class="container">
-            <div class="contact-card">
-                <h3>Get in Touch With Us</h3>
-                <div class="contact-info-grid">
-                    <div class="info-item"><i class="fas fa-phone"></i><h4>Phone Number</h4><p>+91 79845 32859</p></div>
-                    <div class="info-item"><i class="fas fa-envelope"></i><h4>Email Address</h4><p>info@aiprilife.com</p></div>
-                </div>
-                <div class="contact-actions">
-                    <a href="https://wa.me/917984532859" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-                    <a href="tel:+917984532859" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Same slider script as Aicryl page
-        document.addEventListener('DOMContentLoaded', function () { const track = document.querySelector('.slider-track'); const slides = Array.from(track.children); const nextButton = document.querySelector('.next-btn'); const prevButton = document.querySelector('.prev-btn'); const slideWidth = slides[0].getBoundingClientRect().width; let currentIndex = 0; const updateSlidePosition = () => { track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)'; }; nextButton.addEventListener('click', () => { currentIndex++; if (currentIndex > slides.length - 1) { currentIndex = 0; } updateSlidePosition(); }); prevButton.addEventListener('click', () => { currentIndex--; if (currentIndex < 0) { currentIndex = slides.length - 1; } updateSlidePosition(); }); window.addEventListener('resize', () => { const newSlideWidth = slides[0].getBoundingClientRect().width; track.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)'; }); });
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.slider-track');
+            if (track) {
+                const slides = Array.from(track.children);
+                const nextButton = document.querySelector('.next-btn');
+                const prevButton = document.querySelector('.prev-btn');
+                
+                if (slides.length > 0) {
+                    let slideWidth = slides[0].getBoundingClientRect().width;
+                    let currentIndex = 0;
+
+                    const updateSlidePosition = () => {
+                        if (track) {
+                           track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
+                        }
+                    };
+
+                    if (nextButton) {
+                        nextButton.addEventListener('click', () => {
+                            currentIndex++;
+                            if (currentIndex > slides.length - 1) {
+                                currentIndex = 0;
+                            }
+                            updateSlidePosition();
+                        });
+                    }
+
+                    if (prevButton) {
+                        prevButton.addEventListener('click', () => {
+                            currentIndex--;
+                            if (currentIndex < 0) {
+                                currentIndex = slides.length - 1;
+                            }
+                            updateSlidePosition();
+                        });
+                    }
+
+                    window.addEventListener('resize', () => {
+                        slideWidth = slides[0].getBoundingClientRect().width;
+                        updateSlidePosition();
+                    });
+                }
+            }
+        });
     </script>
 
-    
- 
 </body>
 </html>
