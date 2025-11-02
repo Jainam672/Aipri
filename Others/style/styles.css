@@ -2411,28 +2411,55 @@ main>section:nth-of-type(odd) {
             }
         }
 
-        /* Demo Content */
-        .medical-demo-content {
-            padding-top: 100px;
-            padding-bottom: 50px;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-        
-        /* Ensure proper z-index for dropdowns */
-        .medical-dropdown {
-            position: relative;
-        }
-        
-        .medical-dropdown-menu {
-            z-index: 1000;
-        }
-        
-        .medical-dropdown-submenu > .medical-dropdown-menu {
-            z-index: 1001;
-        }
 
         /* Fix for dropdown positioning */
         .dropdown-menu {
             z-index: 1000;
         }
+
+
+
+        /* Add this to your existing CSS */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 70px;
+    height: 70px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid var(--primary-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dark theme support */
+[data-theme="dark"] .preloader {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] .spinner {
+    border-color: #333;
+    border-top-color: var(--primary-blue);
+}

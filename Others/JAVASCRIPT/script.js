@@ -1139,3 +1139,95 @@ document.addEventListener('DOMContentLoaded', function() {
     initModal();
     initFloatingButtons();
 });
+
+
+// Preloader functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const preloader = document.querySelector('.preloader');
+    const imagesToLoad = document.querySelectorAll('img');
+    let loadedImages = 0;
+    
+    function preloadImage(img) {
+        return new Promise((resolve, reject) => {
+            if (img.complete) {
+                loadedImages++;
+                resolve();
+            } else {
+                img.onload = () => {
+                    loadedImages++;
+                    resolve();
+                };
+                img.onerror = () => {
+                    loadedImages++;
+                    resolve(); // Resolve anyway to not block loading
+                };
+            }
+        });
+    }
+
+    async function preloadAllContent() {
+        try {
+            // Preload all images
+            const imagePromises = Array.from(imagesToLoad).map(img => preloadImage(img));
+            await Promise.all(imagePromises);
+
+            // Add small delay to ensure smooth transition
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            // Hide preloader with fade effect
+            preloader.classList.add('fade-out');
+            
+            // Remove preloader from DOM after animation
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+
+        } catch (error) {
+            console.error('Error preloading content:', error);
+            // Hide preloader even if there's an error
+            preloader.style.display = 'none';
+        }
+    }
+
+    // Start preloading
+    preloadAllContent();
+
+    // Fallback: Hide preloader after 5 seconds if loading takes too long
+    setTimeout(() => {
+        if (preloader.style.display !== 'none') {
+            preloader.style.display = 'none';
+        }
+    }, 5000);
+});
+
+// Cache pages for faster navigation
+if ('caches' in window) {
+    caches.open('page-cache').then(cache => {
+        // Add current page to cache
+        cache.add(window.location.href);
+        
+        // Preload other pages
+        const pagesToCache = [
+            '/index.html',
+            '/catalog.html',
+            '/Others/Other_Pages/Aicryl.html',
+            '/Others/Other_Pages/aicryl-rapid.html',
+            '/Others/Other_Pages/aicryl-o.html',
+            '/Others/Other_Pages/aicryl-pds.html',
+            '/Others/Other_Pages/aicryl-rapid.html',
+            '/Others/Other_Pages/Aicryl.html',
+            '/Others/Other_Pages/ajpribond.html',
+            '/Others/Other_Pages/ajprilene-mesh.html',
+            '/Others/Other_Pages/ajprilene.html',
+            '/Others/Other_Pages/ajpriseal.html',
+            '/Others/Other_Pages/atthilon.html',
+            '/Others/Other_Pages/monopril.html',
+            '/Others/Other_Pages/prigut.html',
+            '/Others/Other_Pages/prisil.html',
+            '/Others/Other_Pages/surgical-kits.html'
+            // Add other page URLs here
+        ];
+        
+        cache.addAll(pagesToCache);
+    });
+}

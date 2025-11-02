@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aicryl PDS - Absorbable Surgical Suture | Aipri Lifesciences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base and Typography Styles */
-        :root { --primary-blue: #244F71; --secondary-blue: #1e40af; --light-blue-bg: #eaf2f8; --text-dark: #212529; --text-light: #f8f9fa; --text-muted: #6c757d; --border-color: #dee2e6; --card-bg: #ffffff; --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07); --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); --transition: all 0.3s ease-in-out; }
-        * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--card-bg); color: var(--text-dark); line-height: 1.7; } .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        <link rel="stylesheet" href="/Others/style/styles.css"><!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
 
+    <style>
+       
         /* Header Section */
-        .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; text-align: center; }
+        .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; margin-top: 100px; text-align: center; }
         .product-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 10px; }
         .product-header p { font-size: 1.25rem; opacity: 0.9; }
 
@@ -75,7 +76,101 @@
     </style>
 </head>
 <body>
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg medical-navbar fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="/index.html">
+                <img src="/Others/Media/company-img.png" alt="Medical Supplies Logo" class="medical-logo">
+            </a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler medical-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#medicalNavbarContent">
+                <span class="navbar-toggler-icon medical-navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse medical-navbar-collapse" id="medicalNavbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link active" href="/index.html">Home</a>
+                    </li>
+                    
+                    <!-- Products Dropdown -->
+                    <li class="nav-item dropdown medical-dropdown">
+                        <a class="nav-link medical-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Products
+                        </a>
+                        <ul class="dropdown-menu medical-dropdown-menu">
+                            <div class="medical-category-header">HUMAN SUTURES</div>
+                            
+                            <!-- Absorbable -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/catalog.html#absorbable" style="text-decoration: none; color: black;">Absorbable</a>
+                                </button>
+                            </li>
+                            
+                            <!-- Non-Absorbable -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/catalog.html#non-absorbable" style="text-decoration: none; color: black;">Non-Absorbable</a>
+                                </button>
+                            </li>
+                            
+                            <!-- Other Products -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/aiprilene-mesh.html" style="text-decoration: none; color: black;">Aiprilene Mesh</a>
+                                </button>
+                            </li>
+                            <!-- Other Products -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/aipriseal.html" style="text-decoration: none; color: black;">Aipriseal</a>
+                                </button>
+                            </li>
+                            <!-- Other Products -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/surgical-kits.html" style="text-decoration: none; color: black;">Surgical Kits</a>
+                                </button>
+                            </li>
+                            
+                            <li><hr class="medical-dropdown-divider"></li>
+                            <li><a class="dropdown-item medical-dropdown-item" href="#"></i></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="/index.html#quality">Quality Standards</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="/index.html#company">Our Company</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="/index.html#core-values">Our Core Values</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Buttons -->
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn medical-btn-catalog" style="background-color: green; color: white;">
+                        <i class="fas fa-download me-2"></i><a href="Product Catalogue.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: white;">Download Catalogue</a>
+                    </button>
+                    <button class="btn medical-btn-contact" style="background-color: var(--accent-call-blue); color: white;">
+                        <i class="fas fa-phone me-2"></i><a href="index.html#contact" style="text-decoration: none; color: white;">Contact Us</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <header class="product-header">
         <div class="container">
             <h1>Aicryl PDS</h1>
@@ -244,6 +339,86 @@
         </div>
     </main>
 
+     <!-- 7. FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="/index.html#home">Home</a></li>
+                        <li><a href="/index.html#company">Company</a></li>
+                        <li><a href="/index.html#products">Products</a></li>
+                        <li><a href="/index.html#quality">Quality</a></li>
+                        <li><a href="/index.html#core-values">Core Values</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Products</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="/catalog.html#absorbable">Absorbable </a></li>
+                        <li><a href="/catalog.html#non-absorbable">Non-Absorbable </a></li>
+                        <li><a href="/Others/Other_Pages/aiprilene.html">Aiprilene Mesh Sutures</a></li>
+                        <li><a href="/Others/Other_Pages/monopril.html">Aipriseal Sutures</a></li>
+                        <li><a href="/Others/Other_Pages/monopril.html">Surgical Kits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Aipri Lifesciences LLP</h3>
+                    <p><i class="fas fa-phone"></i> +91 79845 32859</p>
+                    <p><i class="fas fa-envelope"></i> info@aiprilife.com</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/917984532859" class="social-btn btn-whatsapp-footer">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="tel:+917984532859" class="social-btn btn-call-footer">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="https://www.linkedin.com/company/aipri-lifesciences-llp/" class="social-btn btn-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Business Info</h3>
+                    <p><strong>GST No:</strong> 24ACIFA7224J1ZF</p>
+                    <p><strong>CIN:</strong> ACL-9294</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="currentYear"></span> Aipri Lifesciences LLP. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 8. INQUIRY FORM MODAL -->
+    <div class="modal-overlay" id="inquiryModal" >
+        <div class="modal-content" style="background-color: white; border-radius: 8px;">
+            <div class="modal-header" >
+                <h3 class="heading-blue">Product Inquiry Form</h3>
+                <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            </div>
+            <form class="inquiry-form" id="inquiryForm" style="background-color: white;">
+                <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
+                <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
+                <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required></div>
+                <div class="form-group"><label for="message">Your Message *</label><textarea id="message" name="message" rows="4" required></textarea></div>
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 9. FLOATING ACTION BUTTONS -->
+    <div class="floating-action-buttons">
+        <button class="fab-btn" id="scrollTopBtn" aria-label="Scroll to Top"><i class="fas fa-chevron-up"></i></button>
+        <a href="mailto:info@aiprilife.com" class="fab-btn email-btn" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/917984532859" class="fab-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+        <button class="fab-btn inquire-now-btn" id="inquireNowBtn" aria-label="Inquire Now"><i class="fas fa-question-circle"></i></button>
+    </div>
+
+    <script src="/Others/JAVASCRIPT/script.js"></script>
+
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const track = document.querySelector('.slider-track');
