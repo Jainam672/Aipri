@@ -16,7 +16,7 @@
     <style>
       
         /* Header Section */
-        .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; text-align: center; }
+        .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; margin-top: 100px; text-align: center; }
         .product-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 10px; }
         .product-header p { font-size: 1.25rem; opacity: 0.9; }
 
@@ -33,15 +33,83 @@
         .product-info ul li i { color: var(--primary-blue); margin-right: 10px; margin-top: 5px; }
 
         /* Image Slider Styles */
-        .slider-container { position: relative; width: 100%; max-width: 600px; margin: auto; overflow: hidden; border-radius: 15px; box-shadow: var(--shadow-lg); }
-        .slider-track { display: flex; transition: transform 0.5s ease-in-out; }
-        .slide { min-width: 100%; box-sizing: border-box; }
-        .slide img { width: 100%; display: block; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; z-index: 100; font-size: 1.5rem; width: 50px; height: 50px; }
-        .slider-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
-        .prev-btn { left: 10px; }
-        .next-btn { right: 10px; }
-        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            min-height: 400px;
+            height: 0;
+            padding-bottom: 75%;
+            background: #f5f5f5;
+        }
+        @supports (aspect-ratio: 4 / 3) {
+            .slider-container {
+                aspect-ratio: 4 / 3;
+                padding-bottom: 0;
+                height: auto;
+            }
+        }
+        .slider-track {
+            display: flex !important;
+            transition: transform 0.5s ease-in-out !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            height: 100% !important;
+            will-change: transform;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .slide {
+            flex-shrink: 0 !important;
+            flex-grow: 0 !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .slide img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+         !important; }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 101;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .prev-btn {
+            left: 10px;
+        }
+        .next-btn {
+            right: 10px;
+        }
         /* Additional Information and Specs */
         .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; background-color: var(--light-blue-bg); padding: 30px; border-radius: 15px; }
         .spec-item { background-color: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: var(--shadow-md); transition: transform 0.2s; }
@@ -76,7 +144,38 @@
             background-color: var(--secondary-blue); 
         }
 
+        /* Pagination styles for variants table */
+        .variants-pagination {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .variants-pagination button {
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .variants-pagination button.active {
+            background: var(--primary-blue);
+            color: #fff;
+            border-color: var(--primary-blue);
+        }
+        .variants-pagination button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
         @media (max-width: 768px) { .overview-grid { grid-template-columns: 1fr; } .contact-info-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) {
+            .variants-pagination { justify-content: center; }
+            .slider-btn { width: 40px; height: 40px; font-size: 1.1rem; }
+        }
     </style>
 </head>
 <body>
@@ -194,7 +293,7 @@
                         <div class="slider-track">
                             <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221600.jpg" alt="Aicryl Suture Product Information"></div>
                             <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221624.jpg" alt="Aicryl Suture Product Variants"></div>
-                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221633.jpg" alt="Aicryl Suture Product Variants"></div>
+                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221639.jpg" alt="Aicryl Suture Product Variants"></div>
                         </div>
                         <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
@@ -366,18 +465,12 @@
                             <tr><td>10C90DZ40</td><td>1</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
                             <tr><td>10B90DZ40</td><td>2</td><td>90cm</td><td>1/2 Circle</td><td>Round Body</td><td>40mm</td><td></td><td></td><td></td></tr>
                             <tr><td>10E75DZ26</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26 mm</td><td></td><td></td><td></td></tr>
-                            <!-- Page 12 Data -->
-                            <tr><td>10E75DZ30</td><td>2-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>30mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>10F75DZ26</td><td>3-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26 mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>10G75DZ22</td><td>4-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>22 mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>10G75DZ26</td><td>4-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>26 mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>10G75DZ30</td><td>4-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>30mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>10H75DZ13</td><td>5-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>13 mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>10H75DZ17</td><td>5-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>17 mm</td><td></td><td></td><td></td></tr>
-                            <tr><td>10I75DZ13</td><td>6-0</td><td>75cm</td><td>1/2 Circle</td><td>Round Body</td><td>13 mm</td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
+
+                <!-- Pagination controls inserted here -->
+                <div class="variants-pagination" id="variantsPagination" aria-label="Variants table pagination"></div>
             </section>
         </div>
     </main>
@@ -460,52 +553,73 @@
     </div>
 
     <script src="/Others/JAVASCRIPT/script.js"></script>
-
+    <script src="/Others/JAVASCRIPT/product-slider.js"></script>
 
     <script>
+        // Variants table pagination (10 rows per page)
         document.addEventListener('DOMContentLoaded', function () {
-            const track = document.querySelector('.slider-track');
-            if (track) {
-                const slides = Array.from(track.children);
-                const nextButton = document.querySelector('.next-btn');
-                const prevButton = document.querySelector('.prev-btn');
-                
-                if (slides.length > 0) {
-                    let slideWidth = slides[0].getBoundingClientRect().width;
-                    let currentIndex = 0;
+            const tbody = document.querySelector('.variants-table tbody');
+            if (!tbody) return;
 
-                    const updateSlidePosition = () => {
-                        if (track) {
-                           track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
-                        }
-                    };
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const perPage = 10;
+            const pageCount = Math.max(1, Math.ceil(rows.length / perPage));
+            const paginationContainer = document.getElementById('variantsPagination');
 
-                    if (nextButton) {
-                        nextButton.addEventListener('click', () => {
-                            currentIndex++;
-                            if (currentIndex > slides.length - 1) {
-                                currentIndex = 0;
-                            }
-                            updateSlidePosition();
-                        });
-                    }
+            function renderControls() {
+                paginationContainer.innerHTML = '';
+                if (pageCount <= 1) return;
 
-                    if (prevButton) {
-                        prevButton.addEventListener('click', () => {
-                            currentIndex--;
-                            if (currentIndex < 0) {
-                                currentIndex = slides.length - 1;
-                            }
-                            updateSlidePosition();
-                        });
-                    }
+                const prevBtn = document.createElement('button');
+                prevBtn.textContent = 'Prev';
+                prevBtn.className = 'prev-btn';
+                prevBtn.disabled = true;
+                paginationContainer.appendChild(prevBtn);
 
-                    window.addEventListener('resize', () => {
-                        slideWidth = slides[0].getBoundingClientRect().width;
-                        updateSlidePosition();
-                    });
+                for (let i = 1; i <= pageCount; i++) {
+                    const btn = document.createElement('button');
+                    btn.textContent = i;
+                    btn.dataset.page = i;
+                    btn.addEventListener('click', () => showPage(i));
+                    paginationContainer.appendChild(btn);
                 }
+
+                const nextBtn = document.createElement('button');
+                nextBtn.textContent = 'Next';
+                nextBtn.className = 'next-btn';
+                if (pageCount === 1) nextBtn.disabled = true;
+                paginationContainer.appendChild(nextBtn);
+
+                prevBtn.addEventListener('click', () => {
+                    const current = +paginationContainer.querySelector('button.active').dataset.page;
+                    if (current > 1) showPage(current - 1);
+                });
+                nextBtn.addEventListener('click', () => {
+                    const current = +paginationContainer.querySelector('button.active').dataset.page;
+                    if (current < pageCount) showPage(current + 1);
+                });
             }
+
+            function showPage(page) {
+                const start = (page - 1) * perPage;
+                const end = start + perPage;
+                rows.forEach((row, idx) => {
+                    row.style.display = (idx >= start && idx < end) ? '' : 'none';
+                });
+
+                // update active button and prev/next disabled state
+                const buttons = Array.from(paginationContainer.querySelectorAll('button')).filter(b => b.dataset.page);
+                buttons.forEach(b => b.classList.toggle('active', +b.dataset.page === page));
+
+                const prevBtn = paginationContainer.querySelector('.prev-btn');
+                const nextBtn = paginationContainer.querySelector('.next-btn');
+                if (prevBtn) prevBtn.disabled = (page === 1);
+                if (nextBtn) nextBtn.disabled = (page === pageCount);
+            }
+
+            // initialize
+            renderControls();
+            showPage(1);
         });
     </script>
 

@@ -1141,93 +1141,138 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Preloader functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const preloader = document.querySelector('.preloader');
-    const imagesToLoad = document.querySelectorAll('img');
-    let loadedImages = 0;
+        // Table pagination helper: finds all tables with .variants-table
+        (function initVariantsPagination() {
+            document.addEventListener('DOMContentLoaded', function () {
+                const tables = Array.from(document.querySelectorAll('.variants-table'));
+                tables.forEach((table) => {
+                    const tbody = table.querySelector('tbody');
+                    if (!tbody) return;
+                    const rows = Array.from(tbody.querySelectorAll('tr'));
+                    const perPage = 10;
+                    const pageCount = Math.max(1, Math.ceil(rows.length / perPage));
+                    const container = table.parentElement.querySelector('.variants-pagination');
+                    if (!container) return;
+
+                    function renderControls() {
+                        container.innerHTML = '';
+                        if (pageCount <= 1) return;
+
+                        const prevBtn = document.createElement('button');
+                        prevBtn.textContent = 'Prev';
+                        prevBtn.className = 'prev-btn';
+                        prevBtn.disabled = true;
+                        container.appendChild(prevBtn);
+
+                        for (let i = 1; i <= pageCount; i++) {
+                            const btn = document.createElement('button');
+                            btn.textContent = i;
+                            btn.dataset.page = i;
+                            btn.addEventListener('click', () => showPage(i));
+                            container.appendChild(btn);
+                        }
+
+                        const nextBtn = document.createElement('button');
+                        nextBtn.textContent = 'Next';
+                        nextBtn.className = 'next-btn';
+                        if (pageCount === 1) nextBtn.disabled = true;
+                        container.appendChild(nextBtn);
+
+                        prevBtn.addEventListener('click', () => {
+                            const current = +container.querySelector('button.active').dataset.page;
+                            if (current > 1) showPage(current - 1);
+                        });
+                        nextBtn.addEventListener('click', () => {
+                            const current = +container.querySelector('button.active').dataset.page;
+                            if (current < pageCount) showPage(current + 1);
+                        });
+                    }
+
+                    function showPage(page) {
+                        const start = (page - 1) * perPage;
+                        const end = start + perPage;
+                        rows.forEach((row, idx) => {
+                            row.style.display = (idx >= start && idx < end) ? '' : 'none';
+                        });
+                        const buttons = Array.from(container.querySelectorAll('button')).filter(b => b.dataset.page);
+                        buttons.forEach(b => b.classList.toggle('active', +b.dataset.page === page));
+                        const prevBtn = container.querySelector('.prev-btn');
+                        const nextBtn = container.querySelector('.next-btn');
+                        if (prevBtn) prevBtn.disabled = (page === 1);
+                        if (nextBtn) nextBtn.disabled = (page === pageCount);
+                    }
+
+                    renderControls();
+                    showPage(1);
+                });
+            });
+        })();
+
+
+
     
-    function preloadImage(img) {
-        return new Promise((resolve, reject) => {
-            if (img.complete) {
-                loadedImages++;
-                resolve();
-            } else {
-                img.onload = () => {
-                    loadedImages++;
-                    resolve();
-                };
-                img.onerror = () => {
-                    loadedImages++;
-                    resolve(); // Resolve anyway to not block loading
-                };
+        // Variants table pagination (10 rows per page)
+        document.addEventListener('DOMContentLoaded', function () {
+            const tbody = document.querySelector('.variants-table tbody');
+            if (!tbody) return;
+
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const perPage = 10;
+            const pageCount = Math.max(1, Math.ceil(rows.length / perPage));
+            const paginationContainer = document.getElementById('variantsPagination');
+
+            function renderControls() {
+                paginationContainer.innerHTML = '';
+                if (pageCount <= 1) return;
+
+                const prevBtn = document.createElement('button');
+                prevBtn.textContent = 'Prev';
+                prevBtn.className = 'prev-btn';
+                prevBtn.disabled = true;
+                paginationContainer.appendChild(prevBtn);
+
+                for (let i = 1; i <= pageCount; i++) {
+                    const btn = document.createElement('button');
+                    btn.textContent = i;
+                    btn.dataset.page = i;
+                    btn.addEventListener('click', () => showPage(i));
+                    paginationContainer.appendChild(btn);
+                }
+
+                const nextBtn = document.createElement('button');
+                nextBtn.textContent = 'Next';
+                nextBtn.className = 'next-btn';
+                if (pageCount === 1) nextBtn.disabled = true;
+                paginationContainer.appendChild(nextBtn);
+
+                prevBtn.addEventListener('click', () => {
+                    const current = +paginationContainer.querySelector('button.active').dataset.page;
+                    if (current > 1) showPage(current - 1);
+                });
+                nextBtn.addEventListener('click', () => {
+                    const current = +paginationContainer.querySelector('button.active').dataset.page;
+                    if (current < pageCount) showPage(current + 1);
+                });
             }
+
+            function showPage(page) {
+                const start = (page - 1) * perPage;
+                const end = start + perPage;
+                rows.forEach((row, idx) => {
+                    row.style.display = (idx >= start && idx < end) ? '' : 'none';
+                });
+
+                // update active button and prev/next disabled state
+                const buttons = Array.from(paginationContainer.querySelectorAll('button')).filter(b => b.dataset.page);
+                buttons.forEach(b => b.classList.toggle('active', +b.dataset.page === page));
+
+                const prevBtn = paginationContainer.querySelector('.prev-btn');
+                const nextBtn = paginationContainer.querySelector('.next-btn');
+                if (prevBtn) prevBtn.disabled = (page === 1);
+                if (nextBtn) nextBtn.disabled = (page === pageCount);
+            }
+
+            // initialize
+            renderControls();
+            showPage(1);
         });
-    }
-
-    async function preloadAllContent() {
-        try {
-            // Preload all images
-            const imagePromises = Array.from(imagesToLoad).map(img => preloadImage(img));
-            await Promise.all(imagePromises);
-
-            // Add small delay to ensure smooth transition
-            await new Promise(resolve => setTimeout(resolve, 500));
-
-            // Hide preloader with fade effect
-            preloader.classList.add('fade-out');
-            
-            // Remove preloader from DOM after animation
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-
-        } catch (error) {
-            console.error('Error preloading content:', error);
-            // Hide preloader even if there's an error
-            preloader.style.display = 'none';
-        }
-    }
-
-    // Start preloading
-    preloadAllContent();
-
-    // Fallback: Hide preloader after 5 seconds if loading takes too long
-    setTimeout(() => {
-        if (preloader.style.display !== 'none') {
-            preloader.style.display = 'none';
-        }
-    }, 5000);
-});
-
-// Cache pages for faster navigation
-if ('caches' in window) {
-    caches.open('page-cache').then(cache => {
-        // Add current page to cache
-        cache.add(window.location.href);
-        
-        // Preload other pages
-        const pagesToCache = [
-            '/index.html',
-            '/catalog.html',
-            '/Others/Other_Pages/Aicryl.html',
-            '/Others/Other_Pages/aicryl-rapid.html',
-            '/Others/Other_Pages/aicryl-o.html',
-            '/Others/Other_Pages/aicryl-pds.html',
-            '/Others/Other_Pages/aicryl-rapid.html',
-            '/Others/Other_Pages/Aicryl.html',
-            '/Others/Other_Pages/ajpribond.html',
-            '/Others/Other_Pages/ajprilene-mesh.html',
-            '/Others/Other_Pages/ajprilene.html',
-            '/Others/Other_Pages/ajpriseal.html',
-            '/Others/Other_Pages/atthilon.html',
-            '/Others/Other_Pages/monopril.html',
-            '/Others/Other_Pages/prigut.html',
-            '/Others/Other_Pages/prisil.html',
-            '/Others/Other_Pages/surgical-kits.html'
-            // Add other page URLs here
-        ];
-        
-        cache.addAll(pagesToCache);
-    });
-}

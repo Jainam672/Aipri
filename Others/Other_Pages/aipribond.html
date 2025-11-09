@@ -85,22 +85,20 @@
             overflow: hidden;
             border-radius: 15px;
             box-shadow: var(--shadow-lg);
-        }
+          min-height: 400px; height: 0; padding-bottom: 75%; background: #f5f5f5;  } @supports (aspect-ratio: 4 / 3) { .slider-container { aspect-ratio: 4 / 3; padding-bottom: 0; height: auto; } } }
 
         .slider-track {
             display: flex;
             transition: transform 0.5s ease-in-out;
-        }
+         }
 
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
+        .slide { flex-shrink: 0; box-sizing: border-box;
+         flex-grow: 0; display: flex; align-items: center; justify-content: center; position: relative;  !important; }
 
         .slide img {
             width: 100%;
-            display: block;
-        }
+             height: auto;  height: 100%; object-fit: cover; display: block;
+          !important; }
 
         .slider-btn {
             position: absolute;
@@ -116,7 +114,7 @@
             font-size: 1.5rem;
             width: 50px;
             height: 50px;
-        }
+         display: flex; align-items: center; justify-content: center; }
 
         .slider-btn:hover {
             background-color: rgba(0, 0, 0, 0.8);
@@ -383,7 +381,7 @@
 
     <header class="product-header">
         <div class="container">
-            <h1>Aipribond</h1>
+            <h1>Aipribond™</h1>
             <p>Braided & Coated Polyester Non-Absorbable Surgical Suture U.S.P.</p>
         </div>
     </header>
@@ -835,6 +833,8 @@
                     </table>
                 </div>
             </section>
+             <!-- Pagination controls inserted here -->
+                <div class="variants-pagination" id="variantsPagination" aria-label="Variants table pagination"></div>
         </div>
     </main>
 
@@ -924,43 +924,7 @@
     </div>
 
     <script src="/Others/JAVASCRIPT/script.js"></script>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const track = document.querySelector('.slider-track');
-            const slides = Array.from(track.children);
-            const nextButton = document.querySelector('.next-btn');
-            const prevButton = document.querySelector('.prev-btn');
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            let currentIndex = 0;
-
-            const updateSlidePosition = () => {
-                track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
-            };
-
-            nextButton.addEventListener('click', () => {
-                currentIndex++;
-                if (currentIndex > slides.length - 1) {
-                    currentIndex = 0;
-                }
-                updateSlidePosition();
-            });
-
-            prevButton.addEventListener('click', () => {
-                currentIndex--;
-                if (currentIndex < 0) {
-                    currentIndex = slides.length - 1;
-                }
-                updateSlidePosition();
-            });
-
-            window.addEventListener('resize', () => {
-                const newSlideWidth = slides[0].getBoundingClientRect().width;
-                track.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)';
-            });
-        });
-    </script>
+    <script src="/Others/JAVASCRIPT/product-slider.js"></script>
 </body>
 
 </html>
