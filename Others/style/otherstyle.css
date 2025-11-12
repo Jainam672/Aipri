@@ -707,3 +707,244 @@
         width: 95%;
     }
 }
+
+
+
+/* // NAVBAR----------- */
+
+  
+        /* Custom Navbar Styles */
+        .medical-navbar {
+            background-color: var(--light-bg);
+            box-shadow: var(--shadow-md);
+            padding: 12px 0;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .medical-navbar.scrolled {
+            padding: 8px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .medical-logo {
+            height: 70px;
+            transition: var(--transition);
+        }
+
+        .medical-nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            padding: 8px 16px !important;
+            margin: 0 4px;
+            border-radius: 6px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .medical-nav-link:hover, 
+        .medical-nav-link:focus {
+            color: var(--primary-blue) !important;
+            background-color: var(--secondary-bg);
+            transform: translateY(-2px);
+        }
+
+        .medical-nav-link.active {
+            color: var(--primary-blue) !important;
+            font-weight: 600;
+        }
+
+        .medical-nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            right: 16px;
+            height: 2px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        /* Dropdown Styles */
+        .medical-dropdown-menu {
+            border: none;
+            box-shadow: var(--shadow-lg);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 260px;
+            border-top: 3px solid var(--primary-blue);
+        }
+
+        .medical-dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .medical-dropdown-item:hover {
+            background-color: var(--secondary-bg);
+            color: var(--primary-blue);
+            padding-left: 25px;
+        }
+
+        .medical-dropdown-item i {
+            width: 20px;
+            margin-right: 10px;
+            color: var(--primary-blue);
+        }
+
+        .medical-dropdown-divider {
+            margin: 8px 0;
+        }
+
+        /* Multi-level Dropdown */
+        .medical-dropdown-submenu {
+            position: relative;
+        }
+
+        .medical-dropdown-submenu > .medical-dropdown-menu {
+            position: absolute;
+            top: -8px;
+            left: 100%;
+            display: none;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .medical-dropdown-submenu:hover > .medical-dropdown-menu {
+            display: block;
+        }
+
+        .medical-dropdown-submenu > .medical-dropdown-item::after {
+            content: "\f105";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-left: auto;
+            transition: var(--transition);
+        }
+
+        .medical-dropdown-submenu:hover > .medical-dropdown-item::after {
+            transform: rotate(90deg);
+            color: var(--accent-green);
+        }
+
+        .medical-nested-item {
+            padding-left: 40px !important;
+            font-size: 0.9rem;
+        }
+
+        .medical-category-header {
+            font-weight: 600;
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            margin-top: 8px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--secondary-bg);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Button Styles */
+        .medical-btn-catalog {
+            background-color: var(--accent-green);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-weight: 500;
+            transition: var(--transition);
+            
+        }
+
+        .medical-btn-catalog:hover {
+            background-color: #157347;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .medical-btn-contact {
+            background-color: var(--accent-green);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .medical-btn-contact:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Toggler Styles */
+        .medical-navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+            background: transparent;
+        }
+
+        .medical-navbar-toggler:focus {
+            box-shadow: none;
+            outline: 2px solid var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        .medical-navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(37, 79, 113, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            width: 50px;
+            height: 70px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 991.98px) {
+            .medical-navbar-collapse {
+                padding-top: 16px;
+            }
+            
+            .medical-nav-link {
+                margin: 4px 0;
+                text-align: center;
+            }
+            
+            .medical-btn-catalog, 
+            .medical-btn-contact {
+                margin: 8px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .medical-dropdown-submenu > .medical-dropdown-menu {
+                position: static;
+                margin-left: 20px;
+                border-radius: 6px;
+                box-shadow: none;
+                border: 1px solid var(--border-color);
+                display: none;
+            }
+            
+            .medical-dropdown-submenu > .medical-dropdown-item::after {
+                display: none;
+            }
+
+            /* Mobile submenu toggle */
+            .medical-dropdown-submenu.mobile-open > .medical-dropdown-menu {
+                display: block !important;
+            }
+        }
+
+
+        /* Fix for dropdown positioning */
+        .dropdown-menu {
+            z-index: 1000;
+        }
+
+

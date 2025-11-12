@@ -6,11 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monopril - Product Details | Aipri Lifesciences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/Others/style/styles.css"><!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/Others/style/otherstyle.css">
 
     <!-- Font Awesome -->
+
+     <style>
+        :root {
+            --primary-blue: #244F71;
+            --secondary-blue: #1e40af;
+            --text-light: #f8f9fa;
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--text-light);
+            padding: 80px 0;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .product-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 10px;
+        }
+
+        .product-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+    </style>
 
     <style>
         /* Same CSS as the Aicryl template */
@@ -385,22 +410,47 @@
                     </li>
                 </ul>
 
-                <!-- Right Side Buttons -->
+                         
+                       <!-- Right Side Buttons -->
                 <div class="d-flex align-items-center gap-2">
-                    <button class="btn medical-btn-catalog" style="background-color: green; color: white;">
-                        <i class="fas fa-download me-2"></i><a href="Product Catalogue.pdf" target="_blank"
-                            rel="noopener noreferrer" style="text-decoration: none; color: white;">Download
-                            Catalogue</a>
+                    <!-- Download Catalogue Button -->
+                    <button class="btn medical-btn-catalog" id="downloadCatalogBtn" style="background-color: green; color: white;">
+                        <i class="fas fa-download me-2"></i>Download Catalogue
                     </button>
-                    <button class="btn medical-btn-contact"
-                        style="background-color: var(--accent-call-blue); color: white;">
-                        <i class="fas fa-phone me-2"></i><a href="index.html#contact"
-                            style="text-decoration: none; color: white;">Contact Us</a>
+
+                    <!-- Contact Us Button -->
+                    <button class="btn medical-btn-contact" id="contactUsBtn" style="background-color: var(--accent-call-blue, #1e40af); color: white;">
+                        <i class="fas fa-phone me-2"></i>Contact Us
                     </button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Button click handlers -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Download Catalogue button — open in new tab
+        var downloadBtn = document.getElementById('downloadCatalogBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Open PDF in new tab/window
+                window.open('/Others/Media/Product%20Catalogue%20-%20Int.pdf', '_blank', 'noopener,noreferrer');
+            });
+        }
+
+        // Contact Us button — open index.html#contact in new tab
+        var contactBtn = document.getElementById('contactUsBtn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Open contact page in new tab
+                window.open('/index.html#contact', '_blank', 'noopener,noreferrer');
+            });
+        }
+    });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -419,9 +469,9 @@
                     <!-- Image Slider -->
                     <div class="slider-container">
                         <div class="slider-track">
-                            <div class="slide"><img src="/Others/Media/Monopril/DSCN4564.JPG"
-                                    alt="Monopril Suture - View 1"></div>
                             <div class="slide"><img src="/Others/Media/Monopril/DSCN4565.JPG"
+                                    alt="Monopril Suture - View 1"></div>
+                            <div class="slide"><img src="/Others/Media/Monopril/DSCN4564.JPG"
                                     alt="Monopril Suture - Packaging"></div>
                             <div class="slide"><img src="/Others/Media/Monopril/DSCN4567.JPG"
                                     alt="Monopril Suture - Application"></div>

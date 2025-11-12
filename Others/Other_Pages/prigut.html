@@ -6,12 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prigut - Product Details | Aipri Lifesciences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/Others/style/styles.css"><!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/Others/style/otherstyle.css">
 
     <!-- Font Awesome -->
+     <style>
+        :root {
+            --primary-blue: #244F71;
+            --secondary-blue: #1e40af;
+            --text-light: #f8f9fa;
+        }
 
+        .product-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--text-light);
+            padding: 80px 0;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .product-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 10px;
+        }
+
+        .product-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+    </style>
     <style>
         
         .product-header {
@@ -276,6 +299,135 @@
 </head>
 
 <body>
+ <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg medical-navbar fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="/index.html">
+                <img src="/Others/Media/company-img.png" alt="Medical Supplies Logo" class="medical-logo">
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler medical-navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#medicalNavbarContent">
+                <span class="navbar-toggler-icon medical-navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse medical-navbar-collapse" id="medicalNavbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link active" href="/index.html">Home</a>
+                    </li>
+
+                    <!-- Products Dropdown -->
+                    <li class="nav-item dropdown medical-dropdown">
+                        <a class="nav-link medical-nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Products
+                        </a>
+                        <ul class="dropdown-menu medical-dropdown-menu">
+                            <div class="medical-category-header">HUMAN SUTURES</div>
+
+                            <!-- Absorbable -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/catalog.html#absorbable"
+                                        style="text-decoration: none; color: black;">Absorbable</a>
+                                </button>
+                            </li>
+
+                            <!-- Non-Absorbable -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/catalog.html#non-absorbable"
+                                        style="text-decoration: none; color: black;">Non-Absorbable</a>
+                                </button>
+                            </li>
+
+                            <!-- Other Products -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/aiprilene-mesh.html"
+                                        style="text-decoration: none; color: black;">Aiprilene Mesh</a>
+                                </button>
+                            </li>
+                            <!-- Other Products -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/aipriseal.html"
+                                        style="text-decoration: none; color: black;">Aipriseal</a>
+                                </button>
+                            </li>
+                            <!-- Other Products -->
+                            <li class="medical-dropdown-submenu">
+                                <button class="dropdown-item medical-dropdown-item" type="button">
+                                    <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/surgical-kits.html"
+                                        style="text-decoration: none; color: black;">Surgical Kits</a>
+                                </button>
+                            </li>
+
+                            <li>
+                                <hr class="medical-dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item medical-dropdown-item" href="#"></i></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="/index.html#quality">Quality Standards</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="/index.html#company">Our Company</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link medical-nav-link" href="/index.html#core-values">Our Core Values</a>
+                    </li>
+                </ul>
+
+                         
+                       <!-- Right Side Buttons -->
+                <div class="d-flex align-items-center gap-2">
+                    <!-- Download Catalogue Button -->
+                    <button class="btn medical-btn-catalog" id="downloadCatalogBtn" style="background-color: green; color: white;">
+                        <i class="fas fa-download me-2"></i>Download Catalogue
+                    </button>
+
+                    <!-- Contact Us Button -->
+                    <button class="btn medical-btn-contact" id="contactUsBtn" style="background-color: var(--accent-call-blue, #1e40af); color: white;">
+                        <i class="fas fa-phone me-2"></i>Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Button click handlers -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Download Catalogue button — open in new tab
+        var downloadBtn = document.getElementById('downloadCatalogBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Open PDF in new tab/window
+                window.open('/Others/Media/Product%20Catalogue%20-%20Int.pdf', '_blank', 'noopener,noreferrer');
+            });
+        }
+
+        // Contact Us button — open index.html#contact in new tab
+        var contactBtn = document.getElementById('contactUsBtn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Open contact page in new tab
+                window.open('/index.html#contact', '_blank', 'noopener,noreferrer');
+            });
+        }
+    });
+    </script>
 
     <header class="product-header">
         <div class="container">
@@ -292,13 +444,13 @@
                     <div class="slider-container">
                         <div class="slider-track">
                             <div class="slide"><img
-                                    src="https://via.placeholder.com/600x400/6f42c1/FFFFFF?text=Prigut+View+1"
+                                    src="/Others/Media/prigut.jpeg"
                                     alt="Prigut Suture - View 1"></div>
                             <div class="slide"><img
-                                    src="https://via.placeholder.com/600x400/6f42c1/FFFFFF?text=Prigut+Packaging"
+                                    src="/Others/Media/prigut.jpeg"
                                     alt="Prigut Suture - Packaging"></div>
                             <div class="slide"><img
-                                    src="https://via.placeholder.com/600x400/6f42c1/FFFFFF?text=In+Use+Application"
+                                    src="/Others/Media/prigut.jpeg"
                                     alt="Prigut Suture - Application"></div>
                         </div>
                         <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
