@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aicryl - Absorbable Surgical Suture | Aipri Lifesciences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="/Others/style/styles.css">
     <link rel="stylesheet" href="/Others/style/otherstyle.css">
-    
         <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -16,7 +14,18 @@
     <style>
       
         /* Header Section */
-        .product-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: var(--text-light); padding: 80px 0; margin-top: 100px; text-align: center; }
+        /* Ensure correct CSS variable name and provide fallbacks */
+        .product-header {
+            background: linear-gradient(
+                135deg,
+                var(--primary-blue, #244F71),
+                var(--secondary-blue, #1e40af)
+            );
+            color: var(--text-light, #fff);
+            padding: 80px 0;
+            margin-top: 100px;
+            text-align: center;
+        }
         .product-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 10px; }
         .product-header p { font-size: 1.25rem; opacity: 0.9; }
 
@@ -82,7 +91,8 @@
             display: block !important;
             margin: 0 !important;
             padding: 0 !important;
-         !important; }
+         /* !important; */
+         }
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -263,16 +273,16 @@
                 <!-- Right Side Buttons -->
                 <div class="d-flex align-items-center gap-2">
                     <button class="btn other-btn-catalog" style="background-color: green; color: white;">
-                        <i class="fas fa-download me-2"></i><a href="Product Catalogue.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: white;">Download Catalogue</a>
+                        <i class="fas fa-download me-2"></i><a href="/Others/Media/Product Catalogue - Int.pdf Catalogue.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: white;">Download Catalogue</a>
                     </button>
                     <button class="btn other-btn-contact" style="background-color: var(--accent-call-blue); color: white;">
-                        <i class="fas fa-phone me-2"></i><a href="index.html#contact" style="text-decoration: none; color: white;">Contact Us</a>
+                        <i class="fas fa-phone me-2"></i><a href="/index.html#contact" style="text-decoration: none; color: white;">Contact Us</a>
                     </button>
                 </div>
             </div>
         </div>
     </nav>
-<br><br><br>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -291,9 +301,9 @@
                     <!-- Image Slider -->
                     <div class="slider-container">
                         <div class="slider-track">
-                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221600.jpg" alt="Aicryl Suture Product Information"></div>
-                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221624.jpg" alt="Aicryl Suture Product Variants"></div>
-                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221639.jpg" alt="Aicryl Suture Product Variants"></div>
+                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221624.jpg" alt="Aicryl Suture Product Information"></div>
+                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221600.jpg" alt="Aicryl Suture Product Variants"></div>
+                            <div class="slide"><img src="/Others/Media/Aicryl suture/20250917_221633.jpg" alt="Aicryl Suture Product Variants"></div>
                         </div>
                         <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
@@ -302,6 +312,7 @@
                     <div class="product-info">
                         <h2 class="section-title">Product Overview</h2>
                         <p>Aicryl – Braided & Coated Polyglactin 910 Suture is a synthetic absorbable sterile surgical suture composed of a copolymer made from 90% glycolide and 10% L-lactide. In-house needle manufacturing provides you the better needles with optimum sharpness which finally delivers smooth riding on tissues during suturing.</p>
+                        <p>Vicryl® Plus is updated version of Vicryl suture which is enhanced with Triclosan, an antibacterial agent that helps reduce the risk of surgical site infections. It offers excellent knot security, predictable absorption within 56–70 days, and is ideal for soft tissue approximation and ligation.</p>
                         
                         <h3>Indications</h3>
                         <p>Aicryl is indicated only for use in superficial soft tissue approximation of the skin and mucosa. The suture holds its tensile strength for approximately two to three weeks in tissue and is completely absorbed by hydrolysis within 56 to 70 days.</p>
