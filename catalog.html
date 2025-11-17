@@ -137,10 +137,11 @@
         }
 
     </style>
+    
 </head>
 <body>
-       <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg medical-navbar fixed-top" style="height: 100px;">
+         <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg medical-navbar fixed-top">
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand" href="/index.html">
@@ -156,7 +157,7 @@
             <div class="collapse navbar-collapse medical-navbar-collapse" id="medicalNavbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link medical-nav-link active" href="#">Home</a>
+                        <a class="nav-link medical-nav-link active" href="/index.html">Home</a>
                     </li>
                     
                     <!-- Products Dropdown -->
@@ -172,7 +173,6 @@
                                 <button class="dropdown-item medical-dropdown-item" type="button">
                                     <i class="fas fa-arrow-right"></i><a href="/catalog.html#absorbable" style="text-decoration: none; color: black;">Absorbable</a>
                                 </button>
-                              
                             </li>
                             
                             <!-- Non-Absorbable -->
@@ -180,7 +180,6 @@
                                 <button class="dropdown-item medical-dropdown-item" type="button">
                                     <i class="fas fa-arrow-right"></i><a href="/catalog.html#non-absorbable" style="text-decoration: none; color: black;">Non-Absorbable</a>
                                 </button>
-                              
                             </li>
                             
                             <!-- Other Products -->
@@ -188,21 +187,18 @@
                                 <button class="dropdown-item medical-dropdown-item" type="button">
                                     <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/aiprilene-mesh.html" style="text-decoration: none; color: black;">Aiprilene Mesh</a>
                                 </button>
-                               
                             </li>
                             <!-- Other Products -->
                             <li class="medical-dropdown-submenu">
                                 <button class="dropdown-item medical-dropdown-item" type="button">
                                     <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/aipriseal.html" style="text-decoration: none; color: black;">Aipriseal</a>
                                 </button>
-                               
                             </li>
                             <!-- Other Products -->
                             <li class="medical-dropdown-submenu">
                                 <button class="dropdown-item medical-dropdown-item" type="button">
                                     <i class="fas fa-arrow-right"></i><a href="/Others/Other_Pages/surgical-kits.html" style="text-decoration: none; color: black;">Surgical Kits</a>
                                 </button>
-                               
                             </li>
                             
                             <li><hr class="medical-dropdown-divider"></li>
@@ -220,23 +216,51 @@
                     
                     <li class="nav-item">
                         <a class="nav-link medical-nav-link" href="/index.html#core-values">Our Core Values</a>
-                    </li>   
+                    </li>
                 </ul>
                 
-                <!-- Right Side Buttons -->
+                       <!-- Right Side Buttons -->
                 <div class="d-flex align-items-center gap-2">
-                    <a class="btn medical-btn-catalog" href="/Others/Media/Product%20Catalogue.pdf" target="_blank" rel="noopener noreferrer"
-                       style="background-color: green; color: white; text-decoration: none;">
+                    <!-- Download Catalogue Button -->
+                    <button class="btn medical-btn-catalog" id="downloadCatalogBtn" style="background-color: green; color: white;">
                         <i class="fas fa-download me-2"></i>Download Catalogue
-                    </a>
+                    </button>
 
-                    <a class="btn medical-btn-contact" href="/index.html#contact" style="background-color: var(--accent-call-blue); color: white; text-decoration: none;">
+                    <!-- Contact Us Button -->
+                    <button class="btn medical-btn-contact" id="contactUsBtn" style="background-color: var(--accent-call-blue, #1e40af); color: white;">
                         <i class="fas fa-phone me-2"></i>Contact Us
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Button click handlers -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Download Catalogue button — open in new tab
+        var downloadBtn = document.getElementById('downloadCatalogBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Open PDF in new tab/window
+                window.open('/Others/Media/Product%20Catalogue%20-%20Int.pdf', '_blank', 'noopener,noreferrer');
+            });
+        }
+
+        // Contact Us button — open index.html#contact in new tab
+        var contactBtn = document.getElementById('contactUsBtn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Open contact page in new tab
+                window.open('/index.html#contact', '_blank', 'noopener,noreferrer');
+            });
+        }
+    });
+    </script>
+    <br><br>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -260,7 +284,7 @@
             <div class="product-grid">
                 <!-- Aicryl Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/New/arcrlic.jpg" alt="Aicryl">
+                    <img src="/Others/Media/AddedIMages/arcrlic.jpg" alt="Aicryl">
                     <div class="card-content">
                         <div>
                             <h3>Aicryl™</h3>
@@ -271,7 +295,7 @@
                 </div>
                 <!-- Aicryl Rapid Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/New/rapid.jpg" alt="Aicryl Rapid">
+                    <img src="/Others/Media/AddedIMages/rapid.jpg" alt="Aicryl Rapid">
                     <div class="card-content">
                         <div>
                             <h3>Aicryl Rapid™</h3>
@@ -282,7 +306,7 @@
                 </div>
                 <!-- Aicryl PDS Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/pds.jpeg" alt="Aicryl PDS">
+                    <img src="/Others/Media/AddedIMages/PDS.jpg" alt="Aicryl PDS">
                     <div class="card-content">
                         <div>
                             <h3>Aicryl PDS™</h3>
@@ -293,7 +317,7 @@
                 </div>
                 <!-- Aicryl-O Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/o.jpeg" alt="Aicryl-O">
+                    <img src="/Others/Media/AddedIMages/AIC-O.jpg" alt="Aicryl-O">
                     <div class="card-content">
                         <div>
                             <h3>Aicryl - O™</h3>
@@ -304,7 +328,7 @@
                 </div>
                 <!-- Monopril Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/Monopril/DSCN4565.JPG" alt="Monopril">
+                    <img src="/Others/Media/AddedIMages/Monopril.jpg" alt="Monopril">
                     <div class="card-content">
                         <div>
                             <h3>Monopril™</h3>
@@ -315,7 +339,7 @@
                 </div>
                 <!-- Prigut Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/prigut.jpeg" alt="Prigut">
+                    <img src="/Others/Media/AddedIMages/Prigut.jpg" alt="Prigut">
                     <div class="card-content">
                         <div>
                             <h3>Prigut™</h3>
@@ -333,7 +357,7 @@
             <div class="product-grid">
                 <!-- Aiprilene Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/New/ariplene.jpg" alt="Aiprilene">
+                    <img src="/Others/Media/AddedIMages/ariplene.jpg" alt="Aiprilene">
                     <div class="card-content">
                         <div>
                             <h3>Aiprilene™</h3>
@@ -344,7 +368,7 @@
                 </div>
                 <!-- Aipribond Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/bond.jpeg" alt="Aipribond">
+                    <img src="/Others/Media/AddedIMages/BOND.jpg" alt="Aipribond">
                     <div class="card-content">
                         <div>
                             <h3>Aipribond™</h3>
@@ -355,7 +379,7 @@
                 </div>
                 <!-- Aithilon Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/New/aithlon.jpg" alt="Aithilon">
+                    <img src="/Others/Media/AddedIMages/aithlon.jpg" alt="Aithilon">
                     <div class="card-content">
                         <div>
                             <h3>Aithilon™</h3>
@@ -366,7 +390,7 @@
                 </div>
                 <!-- Prisil Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/prisil.jpeg" alt="Prisil">
+                    <img src="/Others/Media/AddedIMages/PRisil.jpg" alt="Prisil">
                     <div class="card-content">
                         <div>
                             <h3>Prisil™</h3>
@@ -384,7 +408,7 @@
             <div class="product-grid">
                 <!-- Aiprilene Mesh Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/mesh.jpeg" alt="Aiprilene Mesh">
+                    <img src="/Others/Media/AddedIMages/mesh.jpg" alt="Aiprilene Mesh">
                     <div class="card-content">
                         <div>
                             <h3>Aiprilene Mesh™</h3>
@@ -395,7 +419,7 @@
                 </div>
                 <!-- Aipriseal Card -->
                 <div class="product-card">
-                    <img src="/Others/Media/aippriseal.jpeg" alt="Aipriseal">
+                    <img src="/Others/Media/AddedIMages/SEAL.jpg" alt="Aipriseal">
                     <div class="card-content">
                         <div>
                             <h3>Aipriseal™</h3>
@@ -406,7 +430,7 @@
                 </div>
                 <!-- Surgical Kits Card -->
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/600x400/0d6efd/FFFFFF?text=Surgical+Kits" alt="Surgical Kits">
+                    <img src="/Others/Media/AddedIMages/KIT.jpg" alt="Surgical Kits">
                     <div class="card-content">
                         <div>
                             <h3>Surgical Kits™</h3>

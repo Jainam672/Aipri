@@ -1298,3 +1298,67 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Only apply this logic on smaller screens where the navbar is collapsed
+    const navbarToggler = document.querySelector('.medical-navbar-toggler');
+    const isMobile = () => window.innerWidth < 992; // Bootstrap's 'lg' breakpoint
+
+    // Function to handle submenu toggling
+    function handleSubmenuToggle(event) {
+        if (!isMobile() && !document.querySelector('.navbar-toggler').classList.contains('collapsed')) {
+             // If not mobile or navbar is expanded, use original hover logic
+             return;
+        }
+
+        const submenuParent = event.currentTarget.closest('.medical-dropdown-submenu');
+        // Check if the click was directly on the link within the dropdown item
+        // or if the item itself should act as a toggle.
+        // For your current structure, it's the <a> inside the button that's clicked
+        // if href is present. We want the *button* to toggle.
+
+        // Prevent default only if it's not a link directly to a page AND it's a submenu
+        const targetLink = event.currentTarget.querySelector('a');
+        if (submenuParent && (!targetLink || targetLink.getAttribute('href') === '#')) {
+            event.preventDefault();
+            submenuParent.classList.toggle('show');
+        } else if (submenuParent && targetLink && targetLink.getAttribute('href') !== '#' && submenuParent.classList.contains('show')) {
+            // If it's a link to a page and submenu is already open, let the link work
+            // but close the submenu if user navigates away.
+            submenuParent.classList.remove('show');
+        }
+    }
+
+
+    // Attach click listener to each medical-dropdown-submenu's button/link
+    // Note: Your HTML uses a <button> as the dropdown item.
+    document.querySelectorAll('.medical-dropdown-submenu > .medical-dropdown-item').forEach(item => {
+        item.addEventListener('click', handleSubmenuToggle);
+        // If the item has a nested <a>, ensure it doesn't immediately navigate
+        // when the submenu is meant to be toggled.
+        item.querySelector('a')?.addEventListener('click', function(e) {
+            if (isMobile() && !e.target.getAttribute('href') || e.target.getAttribute('href') === '#absorbable' || e.target.getAttribute('href') === '#non-absorbable') {
+                 // For #anchor links in the main menu, let Bootstrap handle the collapse, but prevent default
+                 // if it's specifically about opening the dropdown.
+                // The main handler above should cover the toggle.
+            }
+        });
+    });
+
+    // Close all submenus when the main navbar toggler is clicked to close the menu
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+        if (this.classList.contains('collapsed')) { // If navbar is about to close
+            document.querySelectorAll('.medical-dropdown-submenu.show').forEach(submenu => {
+                submenu.classList.remove('show');
+            });
+        }
+    });
+
+    // Close submenus if the main menu is closed (e.g., by clicking outside or another link)
+    document.getElementById('medicalNavbarContent').addEventListener('hide.bs.collapse', function () {
+        document.querySelectorAll('.medical-dropdown-submenu.show').forEach(submenu => {
+            submenu.classList.remove('show');
+        });
+    });
+
+
+});

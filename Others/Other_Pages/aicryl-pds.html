@@ -184,6 +184,44 @@
         }
 
         @media (max-width: 768px) { .overview-grid { grid-template-columns: 1fr; } .contact-info-grid { grid-template-columns: 1fr; } }
+
+         /* Slider layout: ensure each slide occupies full slider viewport */
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Each slide is exactly the slider width and height */
+        .slide {
+            min-width: 100%;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            padding: 12px;
+            /* optional inner spacing so rounded corners don't crop */
+        }
+
+        /* Image scaling: preserve entire image, center it and keep aspect ratio */
+        .slide img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
     </style>
 </head>
 <body>
@@ -333,9 +371,9 @@
                     <!-- Image Slider -->
                     <div class="slider-container">
                         <div class="slider-track">
-                            <div class="slide"><img src="/Others/Media/pds.jpeg" alt="Aicryl PDS Suture Product Information"></div>
-                            <div class="slide"><img src="/Others/Media/pds.jpeg" alt="Aicryl PDS Suture Packaging Example"></div>
-                            <div class="slide"><img src="/Others/Media/pds.jpeg" alt="Aicryl PDS Suture In Use"></div>
+                            <div class="slide"><img src="/Others/Media/AddedIMages/PDS.jpg" alt="Aicryl PDS Suture Product Information"></div>
+                            <div class="slide"><img src="/Others/Media/AddedIMages/PDS.jpg" alt="Aicryl PDS Suture Packaging Example"></div>
+                            <div class="slide"><img src="/Others/Media/AddedIMages/PDS.jpg" alt="Aicryl PDS Suture In Use"></div>
                         </div>
                         <!-- <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button> -->
