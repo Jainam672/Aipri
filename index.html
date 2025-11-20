@@ -545,7 +545,92 @@
         <a href="https://wa.me/917984532859" class="fab-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
         <button class="fab-btn inquire-now-btn" id="inquireNowBtn" aria-label="Inquire Now"><i class="fas fa-question-circle"></i></button>
     </div>
+
+
+  <script>
+// INQUIRY FORM SCRIPT - SIMPLE FIX
+document.addEventListener('DOMContentLoaded', function() {
+    const inquiryForm = document.getElementById('inquiryForm');
+    
+    if (inquiryForm) {
+        console.log('✅ Inquiry form found');
         
+        inquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('✅ Form submission started');
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Use simple relative path - since files are in same folder
+            fetch('submit_inquiry.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                console.log('📡 Response status:', response.status);
+                if (!response.ok) {
+                    throw new Error('Server returned: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('📦 Response data:', data);
+                if (data.success) {
+                    alert('✅ Thank you for your inquiry! We will contact you soon.');
+                    inquiryForm.reset();
+                    // Close modal
+                    const inquiryModal = document.getElementById('inquiryModal');
+                    if (inquiryModal) {
+                        inquiryModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                } else {
+                    alert('❌ Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('💥 Fetch error:', error);
+                alert('❌ Cannot connect to server. Please try again or contact us directly.');
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    } else {
+        console.error('❌ Inquiry form not found!');
+    }
+});
+
+// Modal close functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const inquiryModal = document.getElementById('inquiryModal');
+    
+    if (modalCloseBtn && inquiryModal) {
+        modalCloseBtn.addEventListener('click', function() {
+            inquiryModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close modal when clicking outside
+        inquiryModal.addEventListener('click', function(e) {
+            if (e.target === inquiryModal) {
+                inquiryModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
+</script>
 
     <script src="/Others/JAVASCRIPT/script.js"></script>
 </body>

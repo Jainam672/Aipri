@@ -19,7 +19,7 @@
         safeCall(initProductDetailsButtons);
         safeCall(initCurrentYear);
         safeCall(initSmoothScrolling);
-        safeCall(initInquiryForm); // ADD THIS NEW FUNCTION
+        // safeCall(initInquiryForm); // ADD THIS NEW FUNCTION
 
         console.log('Aipri Lifesciences safe initialization complete');
     });
@@ -377,59 +377,59 @@ function initSmoothScrolling() {
 }
 
 // 9. INQUIRY FORM FUNCTIONALITY - NEW AND CLEAN
-function initInquiryForm() {
-    const inquiryForm = document.getElementById('inquiryForm');
+// function initInquiryForm() {
+//     const inquiryForm = document.getElementById('inquiryForm');
     
-    if (inquiryForm) {
-        console.log('Inquiry form found, setting up database submission...');
+//     if (inquiryForm) {
+//         console.log('Inquiry form found, setting up database submission...');
         
-        inquiryForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            console.log('Inquiry form submitted to database!');
+//         inquiryForm.addEventListener('submit', function(e) {
+//             e.preventDefault();
+//             console.log('Inquiry form submitted to database!');
             
-            const formData = new FormData(this);
+//             const formData = new FormData(this);
             
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
+//             // Show loading state
+//             const submitBtn = this.querySelector('button[type="submit"]');
+//             const originalText = submitBtn.innerHTML;
+//             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+//             submitBtn.disabled = true;
             
-            // Send to database
-            fetch('submit_inquiry.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                console.log('Response received:', response);
-                return response.json();
-            })
-            .then(data => {
-                console.log('Data received:', data);
-                if (data.success) {
-                    alert('✅ Thank you for your inquiry! We will contact you soon.');
-                    inquiryForm.reset();
-                    // Close modal
-                    const modalCloseBtn = document.getElementById('modalCloseBtn');
-                    if (modalCloseBtn) modalCloseBtn.click();
-                } else {
-                    alert('❌ Failed to submit inquiry: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('❌ An error occurred. Please try again.');
-            })
-            .finally(() => {
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
-        });
-    } else {
-        console.log('Inquiry form not found!');
-    }
-}
+//             // Send to database
+//             fetch('submit_inquiry.php', {
+//                 method: 'POST',
+//                 body: formData
+//             })
+//             .then(response => {
+//                 console.log('Response received:', response);
+//                 return response.json();
+//             })
+//             .then(data => {
+//                 console.log('Data received:', data);
+//                 if (data.success) {
+//                     alert('✅ Thank you for your inquiry! We will contact you soon.');
+//                     inquiryForm.reset();
+//                     // Close modal
+//                     const modalCloseBtn = document.getElementById('modalCloseBtn');
+//                     if (modalCloseBtn) modalCloseBtn.click();
+//                 } else {
+//                     alert('❌ Failed to submit inquiry: ' + data.message);
+//                 }
+//             })
+//             .catch(error => {
+//                 console.error('Error:', error);
+//                 alert('❌ An error occurred. Please try again.');
+//             })
+//             .finally(() => {
+//                 // Reset button
+//                 submitBtn.innerHTML = originalText;
+//                 submitBtn.disabled = false;
+//             });
+//         });
+//     } else {
+//         console.log('Inquiry form not found!');
+//     }
+// }
 
 // 10. NAVBAR SCROLL EFFECT
 window.addEventListener('scroll', function() {
