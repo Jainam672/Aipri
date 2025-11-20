@@ -2830,3 +2830,201 @@ main>section:nth-of-type(odd) {
         transform: none;
     }
 }
+
+
+
+/* ===== INQUIRY FORM WRAPPER ===== */
+.inquiry-wrapper {
+    width: 100%;
+    padding: 20px 10px;
+    background: #f4f6fb;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.inquiry-card {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+/* Heading */
+.inquiry-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2933;
+    margin: 0 0 4px;
+    text-align: left;
+}
+
+.inquiry-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 15px;
+}
+
+/* Form layout */
+.inquiry-form {
+    width: 100%;
+}
+
+/* Each field group */
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group-inline .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* Label */
+.form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+/* Inputs, select, textarea */
+.form-control,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+}
+
+/* Textarea */
+.form-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Placeholder */
+.form-control::placeholder,
+.form-textarea::placeholder {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+/* Small hint text */
+.form-hint {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 2px;
+}
+
+/* Radio / checkbox groups */
+.option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 13px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Rating (for "How did you like our service?") */
+.rating-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rating-pill {
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.rating-pill input {
+    display: none;
+}
+
+.rating-pill span {
+    display: inline-block;
+}
+
+.rating-pill-active {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+/* Submit button */
+.btn-submit {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 999px;
+    border: none;
+    background: #2563eb;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 6px;
+    text-decoration: none;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8;
+}
+
+/* Small footer text inside form */
+.form-footer-note {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+/* ====== RESPONSIVE (for mobile) ====== */
+@media (max-width: 600px) {
+    .inquiry-card {
+        padding: 16px 14px;
+        border-radius: 10px;
+    }
+
+    .inquiry-title {
+        font-size: 18px;
+    }
+
+    .form-group-inline {
+        flex-direction: column;
+    }
+}

@@ -1295,3 +1295,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         })();
+
+
+// Inquiry Form Submission
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    
+    fetch('submit_inquiry.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Thank you for your inquiry! We will contact you soon.');
+            document.getElementById('inquiryForm').reset();
+            document.getElementById('modalCloseBtn').click();
+        } else {
+            alert('Failed to submit inquiry. Please try again.');
+        }
+    })
+    .catch(error => {
+        alert('An error occurred. Please try again.');
+    });
+});
