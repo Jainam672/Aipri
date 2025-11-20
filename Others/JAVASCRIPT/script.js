@@ -1296,28 +1296,54 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })();
 
-
-// Inquiry Form Submission
-document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+// Inquiry Form Submission - UPDATED VERSION
+document.addEventListener('DOMContentLoaded', function() {
+    const inquiryForm = document.getElementById('inquiryForm');
     
-    const formData = new FormData(this);
-    
-    fetch('submit_inquiry.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Thank you for your inquiry! We will contact you soon.');
-            document.getElementById('inquiryForm').reset();
-            document.getElementById('modalCloseBtn').click();
-        } else {
-            alert('Failed to submit inquiry. Please try again.');
-        }
-    })
-    .catch(error => {
-        alert('An error occurred. Please try again.');
-    });
+    if (inquiryForm) {
+        inquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Inquiry form submitted!'); // Debug line
+            
+            const formData = new FormData(this);
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            fetch('submit_inquiry.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                console.log('Response received:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data received:', data);
+                if (data.success) {
+                    alert('✅ Thank you for your inquiry! We will contact you soon.');
+                    inquiryForm.reset();
+                    // Close modal if exists
+                    const modalCloseBtn = document.getElementById('modalCloseBtn');
+                    if (modalCloseBtn) modalCloseBtn.click();
+                } else {
+                    alert('❌ Failed to submit inquiry: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('❌ An error occurred. Please try again.');
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    } else {
+        console.log('Inquiry form not found!');
+    }
 });
