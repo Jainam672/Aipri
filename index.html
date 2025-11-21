@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/Others/style/styles.css">
         <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- F  ont Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
@@ -25,7 +25,7 @@
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand" href="#">
-                <img src="/Others/Media/company-img.png" alt="Medical Supplies Logo" class="medical-logo">
+                <img src="/comapnyimg.jpg" alt="Medical Supplies Logo" class="medical-logo">
             </a>
             
             <!-- Mobile Toggle Button -->
@@ -546,42 +546,67 @@
         <button class="fab-btn inquire-now-btn" id="inquireNowBtn" aria-label="Inquire Now"><i class="fas fa-question-circle"></i></button>
     </div>
 
+<script>
+console.log('🎯 SCRIPT IS LOADING!');
+alert('Script is loading - click OK to continue');
+</script>
 
-  <script>
-// INQUIRY FORM SCRIPT - FIXED
+ <script>
+// INQUIRY FORM SCRIPT - DEBUG VERSION
+console.log('🔄 Script loading...');
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM fully loaded');
+    
     const inquiryForm = document.getElementById('inquiryForm');
+    console.log('🔍 Looking for form with ID "inquiryForm":', inquiryForm);
     
     if (inquiryForm) {
-        console.log('✅ Inquiry form found');
+        console.log('✅ Inquiry form FOUND!');
+        console.log('📝 Form HTML:', inquiryForm.outerHTML);
         
         inquiryForm.addEventListener('submit', function(e) {
+            console.log('🎯 FORM SUBMIT EVENT TRIGGERED!');
             e.preventDefault();
-            console.log('✅ Form submission started');
+            console.log('✅ Default form submission prevented');
             
             // Get form data
             const formData = new FormData(this);
+            console.log('📦 Form data collected:', {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            });
             
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
+            console.log('🔘 Submit button found:', submitBtn);
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Send to PHP file - FIXED FETCH
+            console.log('🚀 Sending fetch request to submit_inquiry.php');
+            
+            // Send to PHP file
             fetch('submit_inquiry.php', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams(formData)
+                body: formData  // Using FormData directly (no headers needed)
             })
             .then(response => {
-                console.log('📡 Response status:', response.status);
-                if (!response.ok) {
-                    throw new Error('Server error: ' + response.status);
+                console.log('📡 Response received. Status:', response.status, 'OK:', response.ok);
+                return response.text(); // First get as text to see what's returned
+            })
+            .then(text => {
+                console.log('📨 Raw response text:', text);
+                try {
+                    const data = JSON.parse(text);
+                    console.log('📦 Parsed JSON data:', data);
+                    return data;
+                } catch (e) {
+                    console.error('❌ JSON parse error:', e, 'Raw text:', text);
+                    throw new Error('Invalid JSON response: ' + text);
                 }
-                return response.json();
             })
             .then(data => {
                 console.log('📦 Response data:', data);
@@ -594,8 +619,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         inquiryModal.classList.remove('active');
                         document.body.style.overflow = '';
                     }
-                    
-                    // Refresh dashboard to show new inquiry
                     console.log('✅ Inquiry submitted successfully!');
                 } else {
                     alert('❌ Error: ' + data.message);
@@ -603,20 +626,30 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('💥 Fetch error:', error);
-                alert('❌ Server connection failed. Please try again.');
+                console.error('💥 Error message:', error.message);
+                alert('❌ Server connection failed: ' + error.message);
             })
             .finally(() => {
                 // Reset button
+                console.log('🔄 Resetting button state');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             });
         });
+        
+        console.log('✅ Form event listener added successfully');
     } else {
-        console.error('❌ Inquiry form not found!');
+        console.error('❌ Inquiry form NOT found!');
+        console.error('❌ Available forms on page:');
+        document.querySelectorAll('form').forEach((form, index) => {
+            console.error(`Form ${index}:`, form.id, form.className, form);
+        });
     }
 });
 
+console.log('✅ Script loaded successfully');
 </script>
+
 
     <script src="/Others/JAVASCRIPT/script.js"></script>
 </body>

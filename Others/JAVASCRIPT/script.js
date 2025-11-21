@@ -521,3 +521,65 @@ window.addEventListener('error', function(e) {
 });
 
 console.log('Aipri Lifesciences CLEAN script loaded successfully');
+
+
+
+
+
+
+// CHECK FOR DUPLICATE EVENT LISTENERS
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('inquiryForm');
+    if (form) {
+        // Get all event listeners (this is a hack since we can't directly access them)
+        const originalAddEventListener = form.addEventListener;
+        form.addEventListener = function(type, listener, options) {
+            console.log('🎯 Event listener added to form:', type, listener.toString().substring(0, 100));
+            return originalAddEventListener.call(this, type, listener, options);
+        };
+    }
+});
+
+
+
+
+// ULTIMATE SIMPLE VERSION
+document.getElementById('inquiryForm').onsubmit = function(e) {
+    e.preventDefault();
+    
+    const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value
+    };
+    
+    console.log('Sending:', data);
+    
+    const btn = this.querySelector('button[type="submit"]');
+    btn.innerHTML = 'Sending...';
+    btn.disabled = true;
+    
+    fetch('submit_inquiry.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(result => {
+        if (result.success) {
+            alert('✅ Success!');
+            this.reset();
+            document.getElementById('inquiryModal').style.display = 'none';
+        } else {
+            alert('❌ ' + result.message);
+        }
+    })
+    .catch(err => {
+        alert('❌ Error: ' + err.message);
+    })
+    .finally(() => {
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Inquiry';
+        btn.disabled = false;
+    });
+};
