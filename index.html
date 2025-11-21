@@ -548,7 +548,7 @@
 
 
   <script>
-// INQUIRY FORM SCRIPT - SIMPLE FIX
+// INQUIRY FORM SCRIPT - FIXED
 document.addEventListener('DOMContentLoaded', function() {
     const inquiryForm = document.getElementById('inquiryForm');
     
@@ -568,15 +568,18 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Use simple relative path - since files are in same folder
+            // Send to PHP file - FIXED FETCH
             fetch('submit_inquiry.php', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(formData)
             })
             .then(response => {
                 console.log('📡 Response status:', response.status);
                 if (!response.ok) {
-                    throw new Error('Server returned: ' + response.status);
+                    throw new Error('Server error: ' + response.status);
                 }
                 return response.json();
             })
@@ -591,13 +594,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         inquiryModal.classList.remove('active');
                         document.body.style.overflow = '';
                     }
+                    
+                    // Refresh dashboard to show new inquiry
+                    console.log('✅ Inquiry submitted successfully!');
                 } else {
                     alert('❌ Error: ' + data.message);
                 }
             })
             .catch(error => {
                 console.error('💥 Fetch error:', error);
-                alert('❌ Cannot connect to server. Please try again or contact us directly.');
+                alert('❌ Server connection failed. Please try again.');
             })
             .finally(() => {
                 // Reset button
@@ -610,26 +616,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Modal close functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const modalCloseBtn = document.getElementById('modalCloseBtn');
-    const inquiryModal = document.getElementById('inquiryModal');
-    
-    if (modalCloseBtn && inquiryModal) {
-        modalCloseBtn.addEventListener('click', function() {
-            inquiryModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        // Close modal when clicking outside
-        inquiryModal.addEventListener('click', function(e) {
-            if (e.target === inquiryModal) {
-                inquiryModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-});
 </script>
 
     <script src="/Others/JAVASCRIPT/script.js"></script>

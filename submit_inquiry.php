@@ -10,6 +10,8 @@ header('Content-Type: application/json');
 
 // Log the request
 error_log("=== INQUIRY FORM SUBMISSION START ===");
+error_log("Request method: " . $_SERVER['REQUEST_METHOD']);
+error_log("POST data: " . print_r($_POST, true));
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -19,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
     
-    error_log("Form data received - Name: $name, Email: $email, Phone: $phone");
+    error_log("Form data - Name: $name, Email: $email, Phone: $phone");
 
     // Validate required fields
     if (empty($name) || empty($email) || empty($phone) || empty($message)) {
@@ -46,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
     } catch(PDOException $e) {
         error_log("Database error: " . $e->getMessage());
-        echo json_encode(['success' => false, 'message' => 'Database error. Please try again.']);
+        echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
     }
 } else {
     error_log("Invalid request method: " . $_SERVER['REQUEST_METHOD']);
-    echo json_encode(['success' => false, 'message' => 'Invalid request method.']);
+    echo json_encode(['success' => false, 'message' => 'Invalid request method. Expected POST, got ' . $_SERVER['REQUEST_METHOD']]);
 }
 
 error_log("=== INQUIRY FORM SUBMISSION END ===");
